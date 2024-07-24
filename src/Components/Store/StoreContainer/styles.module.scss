@@ -1,0 +1,70 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.storeContainer {
+  padding-bottom: 100px;
+  padding-left: 16px;
+  padding-right: 16px;
+  @media (max-width: $xs-media) {
+    padding-bottom: 150px;
+  }
+  .contentHeading {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    margin-bottom: 8px;
+    .clickedTitle {
+      text-transform: capitalize;
+      padding-bottom: 16px;
+      color: $gray-700;
+      font-size: 18px;
+      font-weight: 700;
+      color: $primary;
+      width: fit-content;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 4px;
+        right: 0;
+        height: 2px;
+        width: 100%;
+        background-color: $primary;
+      }
+    }
+  }
+  .filteredProducts {
+    // display: flex;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @media (max-width: $xl-media) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: $lg-media) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: $md-media) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $xs-media) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $xxs-media) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .notFound {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 12px 20px;
+    @include borderRadius(4px);
+    width: 100%;
+    margin-bottom: 60px;
+  }
+
+  .noProducts {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

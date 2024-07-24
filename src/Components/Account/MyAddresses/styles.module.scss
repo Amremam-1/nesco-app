@@ -1,0 +1,33 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+
+.myAddresses {
+  position: relative;
+  padding-bottom: 30px;
+  &__container {
+    .savedAddresses {
+      padding-top: 16px;
+      padding-bottom: 32px;
+      display: flex;
+      // align-items: center;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+    .title {
+      color: $primary;
+      font-size: 18px;
+      font-weight: normal;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .notFound {
+      color: #721c24;
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+      padding: 12px 20px;
+      @include borderRadius(4px);
+    }
+  }
+}

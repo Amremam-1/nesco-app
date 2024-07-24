@@ -1,0 +1,115 @@
+@import '../../../../index.scss';
+@import '../../../../sass/mixins';
+
+
+.payForm {
+  width: 90%;
+  @media (max-width: $lg-media) {
+    width: 100%;
+  }
+  .secTitle {
+    color: $primary;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .selectCard {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 16px;
+    .card {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      label {
+        color: $gray-700;
+        font-weight: 400;
+      }
+      input {
+        width: 14px;
+        height: 14px;
+        @include borderRadius(50%);
+        outline: 2px solid $primary;
+        border: 2px solid $white;
+        -webkit-appearance: none;
+        appearance: none;
+        cursor: pointer;
+        &:checked {
+          background-color: $gray-700;
+        }
+      }
+    }
+  }
+  .cardImgs {
+    margin-bottom: 16px;
+  }
+  .cardInfoTitle {
+    font-size: 18px;
+    color: $primary;
+    margin-bottom: 8px;
+  }
+  .cardInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+    .yearMonth {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      @media (max-width: $sm-media) {
+        flex-direction: column;
+      }
+      div {
+        flex: 0 0 48%;
+        @media (max-width: $sm-media) {
+          flex: 0 0 100%;
+        }
+      }
+    }   
+    .cvv {
+      width: 48%;
+      @media (max-width: $sm-media) {
+        width: 100%;
+      }
+    }         
+  }
+  .agreeCheck {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    @media (max-width: $sm-media) {
+      align-items: flex-start;
+    }
+    input {
+      width: 16px;
+      height: 16px;
+      outline: 2px solid $primary;
+      border: 2px solid $white;
+      -webkit-appearance: none;
+      appearance: none;
+      cursor: pointer;
+      &:checked {
+        background-color: $gray-700;
+      }
+      @media (max-width: $sm-media) {
+        margin-top: 8px;
+      }
+    }
+    label {
+      color: $gray-700;
+      font-size: 18px;
+      span {
+        margin-inline-end: 8px;
+        display: inline-block;
+      }
+      a {
+        display: inline-block;
+        color: $primary;
+        text-decoration: underline;
+      }
+    }
+  }
+}

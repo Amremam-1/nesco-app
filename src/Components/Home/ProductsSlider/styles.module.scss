@@ -1,0 +1,101 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.productsSlider {
+  padding-top: 113px;
+  padding-bottom: 68px;
+  background-position: top center;
+  background: url(../../../../public/images/product-bg.png) repeat-x #EAE6E1;
+  @media (max-width: $xl-media) {
+    padding-top: 60px;
+    padding-top: 60px;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 27px;
+      text-align: center;
+      color: $gray-700;
+      margin-bottom: 60px;
+      text-transform: uppercase;
+    }
+    .carouselWrapper {
+      position: relative;
+      width: 100%;
+      .arrowBtns {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        @include transform(translateY(-50%));
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        svg {
+          font-size: 32px;
+          color: $primary;
+        }
+        .rightArrow {
+          cursor: pointer;
+          padding-right: 200px;
+          @media (max-width: $xl-media) {
+            padding-right: 50px;
+          }
+          @media (max-width: $lg-media) {
+            padding-right: 40px;
+          }
+        }
+        .leftArrow {
+          cursor: pointer;
+          padding-left: 200px;
+          @media (max-width: $xl-media) {
+            padding-left: 50px;
+          }
+          @media (max-width: $lg-media) {
+            padding-left: 40px;
+          }
+        }
+      }
+      .carousel {
+        width: 750px;
+        margin: 0px auto;
+        cursor: grab;
+        overflow: hidden;
+        .innerCarousel {
+          display: flex;
+          gap: 50px;
+        }
+        @media (max-width: $lg-media) {
+          width: 600px;
+        }
+        @media (max-width: $md-media) {
+          width: 400px;
+        }
+        @media (max-width: $sm-media) {
+          width: 250px;
+        }
+        @media (max-width: $xs-media) {
+          width: 200px;
+        }
+      }
+    }
+    .discoverBtn {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 27px;
+      text-align: center;
+      margin-top: 46px;
+      color: $gray-700;
+      @include transition(0.2s);
+      &:hover {
+        color: $primary;
+      }
+    }
+    
+  }
+
+}

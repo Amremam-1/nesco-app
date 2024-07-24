@@ -1,0 +1,121 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+
+.inputBox,
+.inputBoxLogin,
+.fullWidthInput,
+.quarterWidthInput {
+  flex: 0 0 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 8px;
+  @media (max-width: $md-media) {
+    flex: 0 0 80%;
+  }
+  @media (max-width: $sm-media) {
+    flex: 0 0 100%;
+  }
+  .label {
+    font-weight: 600;
+    font-size: 14px;
+    color: $gray-400;
+    width: 90%;
+    @media (max-width: $md-media) {
+      width: 80%;
+    }
+    @media (max-width: $sm-media) {
+      width: 100%;
+    }
+  }
+  .input,
+  .inputEmpty {
+    border: 1px solid $primary;
+    @include borderRadius(4px);
+    padding: 8px;
+    width: 100%;
+    outline: none;
+    @include transition(0.2s);
+    background-color: $gray-100;
+    &:focus {
+      box-shadow: $shadow-15;
+    }
+  }
+  .inputEmpty {
+    border-color: $danger;
+  }
+  .errorMsg {
+    font-weight: 400;
+    font-size: 12px;
+    color: $danger;
+    margin-top: -6px;
+  }
+}
+
+.inputBoxLogin {
+  flex: 0 0 100%;
+  
+  .input,
+  .inputEmpty {
+    width: 45%;
+    @media (max-width: $xl-media) {
+      width: 60%;
+    }
+    @media (max-width: $lg-media) {
+      width: 80%;
+    }
+    @media (max-width: $md-media) {
+      width: 80%;
+    }
+    @media (max-width: $sm-media) {
+      width: 100%;
+    }
+  }
+}
+
+.fullWidthInput {
+  flex: 1 0 100%;
+  
+  .input,
+  .inputEmpty {
+    width: 92%;
+    @media (max-width: $md-media) {
+      width: 80%;
+    }
+    @media (max-width: $sm-media) {
+      width: 100%;
+    }
+  }
+}
+
+.quarterWidthInput {
+  flex: 0 0 21.5%;
+  @media (max-width: $xl-media) {
+    flex: 0 0 29%;
+  }
+  @media (max-width: $lg-media) {
+    flex: 1 0 80%;
+  }
+  @media (max-width: $md-media) {
+    flex: 0 0 80%;
+  }
+  @media (max-width: $sm-media) {
+    flex: 0 0 100%;
+  }
+  .input,
+  .inputEmpty {
+    @media (max-width: $xl-media) {
+      width: 100%;
+    }
+    @media (max-width: $lg-media) {
+      width: 80%;
+    }
+    @media (max-width: $md-media) {
+      width: 100%;
+    }
+    @media (max-width: $sm-media) {
+      width: 100%;
+    }
+  }
+}

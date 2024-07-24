@@ -1,0 +1,97 @@
+@import '../../index.scss';
+@import '../../sass/mixins';
+
+
+.franchising {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  @media (max-width: $sm-media) {
+    margin-top: 190px;
+  }
+  &__container {
+    width: 90%;
+    margin: 0px auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    @media (max-width: $xs-media) {
+      width: 100%;
+    }
+    .head {
+      .mainTitle {
+        color: $primary;
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .text {
+        font-size: 16px;
+        font-weight: 400;
+        color: $black-2C;
+        margin-bottom: 8px;
+        text-align: justify;
+        width: 90%;
+        @media (max-width: $lg-media) {
+          width: 100%;
+        }
+      }
+      .title {
+        margin-top: 32px;
+        margin-bottom: 22px;
+        color: $primary;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 36px;
+      }
+    }
+    .btns {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      @media (max-width: $xs-media) {
+        flex-direction: column;
+        button {
+          width: 100%;
+        }
+      }
+      button {
+        border: 1px solid;
+        @include borderRadius(4px);
+        @include transition(0.2s);
+        padding: 8px 24px;
+        color: $white;
+        font-size: 18px;
+        opacity: 1;
+        &:disabled {
+          cursor: not-allowed;
+          opacity: 0.0;
+        }
+      }
+      .prevBtn {
+        background-color: $gray-400;
+        border-color: $gray-400;
+        // &:hover {
+        //   background-color: $white;
+        //   color: $gray-400;
+        // }
+      }
+      .nextBtn {
+        background-color: $primary;
+        border-color: $primary;
+        // &:hover {
+        //   background-color: $white;
+        //   color: $primary;
+        // }
+      }
+      .sendBtn {
+        background-color: $success;
+        border-color: $success;
+        // &:hover {
+        //   background-color: $white;
+        //   color: $success;
+        // }
+      }
+    }
+  }
+}

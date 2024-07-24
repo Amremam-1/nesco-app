@@ -1,0 +1,101 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.myOrders {
+  position: relative;
+  padding-bottom: 30px;
+  &__container {
+    .title {
+      color: $primary;
+      font-size: 22px;
+      font-weight: 600;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .ordersList {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      @media (max-width: $xs-media) {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+      .orderItem {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        background-color: $gray-100;
+        padding: 8px 16px;
+        @include borderRadius(4px);
+        @media (max-width: $xs-media) {
+          gap: 8px;
+          padding: 8px;
+          // justify-content: flex-start;
+        }
+        .serial,
+        .link,
+        .total,
+        .status {
+          color: $gray-700;
+          font-weight: 600;
+          @media (max-width: $xs-media) {
+            font-size: 14px;
+          }
+        }
+        .link {
+          text-decoration: underline;
+          flex: 1;
+          text-align: start;
+        }
+        .serial {
+          flex: 3;
+        }
+        .total {
+          flex: 1;
+        }
+        .status {
+          flex: 2;
+        }
+        @media (max-width: $xs-media) {
+          .link {
+            flex: 1 0 12%;
+          }
+          .serial {
+            flex: 1 0 50%;
+          }
+          .total {
+            flex: 1 0 12%;
+          }
+          .status {
+            flex: 1 0 20%;
+          }
+        }
+        &:first-of-type {
+          background-color: $gray-700;
+          .link {
+            text-decoration: none;
+          }
+          .serial,
+          .link,
+          .total,
+          .status {
+            color: $white;
+          }
+        }
+      }
+    }
+    
+    .notFound {
+      color: #721c24;
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+      padding: 12px 20px;
+      @include borderRadius(4px);
+    }
+    .records {
+      margin-bottom: 50px;
+    }
+  }
+}

@@ -1,0 +1,209 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.icons,
+.iconsCustom {
+  position: relative;
+  flex: 6;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  .cart {
+    margin-inline-end: 4px;
+    position: relative;
+    cursor: pointer;
+    svg {
+      font-size: 28px;
+    }
+    .itemsNum {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      border: 1px solid $primary;
+      width: 24px;
+      height: 24px;
+      @include borderRadius(50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $primary;
+      color: $gray-700;
+      font-size: 14px;
+      font-weight: bold;
+      // font-weight: 600;
+      // padding-inline-start: 3px;
+      // padding-top: 2px;
+    }
+  }
+  .wishlist {
+    svg {
+      font-size: 28px;
+    }
+  }
+  .account {
+    position: relative;
+    cursor: pointer;
+    svg {
+      font-size: 28px;
+    }
+    .accountMenu {
+      position: absolute;
+      top: calc(100% + 8px);
+      // right: 0;
+      left: 50%;
+      @include transform(translateX(-50%));
+      background-color: $white;
+      color: $gray-700;
+      min-width: 180px;
+      @include borderRadius(4px);
+      box-shadow: $shadow-14;
+      z-index: 1001;
+      padding: 4px 16px;
+      @media (max-width: $xxs-media) {
+        padding: 4px;
+        min-width: 160px;
+      }
+      &__item{
+        padding: 8px;
+        color: $gray-700;
+        font-weight: 600;
+        @include transition(0.2s);
+        &:not(:last-of-type) {
+          border-bottom: 1px solid $gray-979797;
+        }
+        &:first-of-type {
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            top: -24px;
+            left: 50%;
+            @include transform(translateX(-50%));
+            // right: 4px;
+            // left: 4px;
+            border: 10px solid;
+            border-color: transparent transparent $white transparent;
+          }
+        }
+        &:hover {
+          background-color: $gray-700;
+          color: $white;
+          button {
+            color: $white;
+          }
+        }
+        .link {
+          display: block;
+          width: 100%;
+        }
+        button {
+          color: $gray-700;
+          text-align: start;
+        }
+      }
+    }
+    // .accountMenu {
+    //   right: 0;
+    //   &__item{
+    //     &:first-of-type {
+    //       &::before {
+    //         right: 4px;
+    //       }
+    //     }
+    //   }
+    // }
+    // .accountMenuRtl {
+    //   left: 0;
+    //   &__item{
+    //     &:first-of-type {
+    //       &::before {
+    //         right: 0px;
+    //         left: 4px;
+    //       }
+    //     }
+    //   }
+    // }
+  }
+  // .langBox {
+  //   .selectLang {
+  //     border: none;
+  //     outline: none;
+  //     color: $white;
+  //     background-color: transparent;
+  //     cursor: pointer;
+  //     font-size: 18px;
+  //     option {
+  //       text-align: center;
+  //       display: block;
+  //       width: 70px;
+  //       background-color: $primary;
+  //     }
+  //     @media (max-width: $sm-media) {
+  //       color: $gray-700;
+  //     }
+  //   }
+  // }
+  .langBox {
+    position: relative;
+    z-index: 1000;
+    .selectedLang {
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .selectLangList {
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      right: 0;
+      background-color: $white;
+      color: $gray-700;
+      width: 50px;
+      border: 2px solid $primary;
+      @include borderRadius(4px);
+      z-index: 2000;
+      .item {
+        width: 100%;
+        text-align: center;
+        font-weight: 700;
+        font-size: 18px;
+        border-bottom: 1px solid $primary;
+        cursor: pointer;
+        @include transition(0.2s);
+        &:hover {
+          background-color: $primary;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.iconsCustom {
+  // gap: 8px;
+  .cart {
+    .itemsNum {
+      border: 2px solid $gray-EAE6E1;
+      background-color: $gray-700;
+      color: $white;
+    }
+  }
+  color: $gray-EAE6E1;
+  flex: 1;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  .langBox {
+    z-index: 1000;
+    .selectLangList {
+      border: 2px solid $gray-700;
+      .item {
+        border-bottom: 1px solid $gray-700;
+        &:hover {
+          background-color: $gray-700;
+        }
+      }
+    }
+  }
+}

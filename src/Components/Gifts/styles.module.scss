@@ -1,0 +1,120 @@
+@import '../../index.scss';
+@import '../../sass/mixins';
+
+
+.gifts {
+  margin-top: 60px;
+  // margin-bottom: 60px;
+  @media (max-width: $sm-media) {
+    margin-top: 190px;
+  }
+  .container,
+  .container2 {
+    width: 90%;
+    margin: 0px auto;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    .giftBox {
+      margin-bottom: 32px;
+      .categTitle {
+        font-size: 20px;
+        color: $gray-700;
+        margin-bottom: 16px;
+      }
+      .giftList {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 32px;
+        @media (max-width: $xxl-media) {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        @media (max-width: $xl-media) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        @media (max-width: $lg-media) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: $sm-media) {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+    .announce {
+      margin-top: 32px;
+      margin-bottom: 32px;
+      background-color: $gray-edebe9;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding: 16px;
+      @include borderRadius(12px);
+      @media (max-width: $sm-media) {
+        gap: 16px;
+      }
+      .image {
+        // flex: 1;
+        width: 60px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          @include transform(rotate(25deg));
+        }
+        @media (max-width: $sm-media) {
+          width: 100px;
+          gap: 16px;
+        }
+        @media (max-width: $xs-media) {
+          width: 120px;
+        }
+      }
+      .text {
+        // flex: 6;
+        color: $gray-700;
+        font-size: 18px;
+      }
+    }
+  }
+  .giftSupport {
+    background-color: $gray-edebe9;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .container2 {
+
+    }
+    .content {
+      .title {
+        color: $gray-700;
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .text {
+        max-width: 400px;
+        font-size: 17px;
+        color: $gray-500;
+      }
+      .links {
+        margin-top: 32px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+        .link {
+          border: 1px solid $gray-700;
+          padding: 8px 16px;
+          @include borderRadius(40px);
+          @include transition(0.3s);
+          display: block;
+          font-weight: 600;
+          color: $gray-700;
+          &:hover {
+            background-color: $gray-700;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

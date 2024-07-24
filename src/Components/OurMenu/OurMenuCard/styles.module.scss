@@ -1,0 +1,56 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.ourMenuCard {
+  flex: 0 0 %25;
+  .subMenuLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    .image {
+      min-width: 200px;
+      min-height: 200px;
+      // width: 200px;
+      height: 200px;
+      max-width: 250px;
+      max-height: 250px;
+      // overflow: hidden;
+      @include transition(0.4s);
+      @media (max-width: $xl-media) {
+        min-width: 150px;
+        min-height: 150px;
+      }
+      @media (max-width: $md-media) {
+        min-width: 120px;
+        min-height: 120px;
+      }
+      &:hover {
+        @include transform(rotate(6deg) scale(1.1));
+        // @include transform(scale(1.1));
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .prodTitle {
+      color: $gray-700;
+      text-align: center;
+      @media (max-width: $md-media) {
+        font-size: 16px;
+      }
+      @media (max-width: $sm-media) {
+        font-size: 20px;
+      }
+      @media (max-width: $xs-media) {
+        font-size: 16px;
+      }
+      @media (max-width: $xxs-media) {
+        font-size: 20px;
+      }
+    }
+  }
+}

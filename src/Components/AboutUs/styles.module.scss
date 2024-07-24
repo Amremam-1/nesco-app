@@ -1,0 +1,433 @@
+@import '../../index.scss';
+@import '../../sass/mixins';
+
+.aboutus {
+  margin-top: 60px;
+  // margin-bottom: 60px;
+  overflow-x: hidden;
+  @media (max-width: $sm-media) {
+    margin-top: 190px;
+  }
+  &__container {
+    margin: 0px auto;
+    // width: 90%;
+    // padding-left: 16px;
+    // padding-right: 16px;
+
+    .storyRoleBg {
+      position: relative;
+      .secImg,
+      .secImgAr {
+        z-index: -1;
+        position: absolute;
+        top: -40px;
+        @media (max-width: $lg-media) {
+          display: none;
+        }
+      }
+      .secImg {
+        left: 20%;
+      }
+      .secImgAr {
+        right: 20%;
+        img {
+          @include transform(scaleX(-1));
+        }
+      }
+    }
+    .story {
+      position: relative;
+      display: flex;
+      gap: 32px;
+      @media (max-width: $md-media) {
+        flex-direction: column;
+      }
+      .sideImage,
+      .sideImageAr {
+        position: absolute;
+        bottom: -150px;
+        width: 250px;
+        z-index: 1;
+        @media (max-width: $xl-media) {
+          display: none;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .sideImage {
+        right: 0px;
+      }
+      .sideImageAr {
+        left: 0;
+        img {
+          @include transform(scaleX(-1));
+        }
+      }
+      .imageBg,
+      .imageBgAr {
+        flex: 0 0 40%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        background-color: $gray-EAE6E1;
+        padding: 40px 20px;
+        background-image: url(../../../public/images/aboutus-story.png);
+        background-size: 50%;
+        background-position: center left;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden;
+        @media (max-width: $lg-media) {
+          background-image: none;
+          justify-content: center;
+        }
+        h3 {
+          text-align: center;
+          font-size: 36px;
+          font-weight: bold;
+          line-height: 42px;
+          @media (max-width: $sm-media) {
+            font-size: 32px;
+          }
+          span {
+            &:first-of-type {
+              color: $primary;
+            }
+            &:last-of-type {
+              color: $gray-700;
+            }
+          }
+        }
+      }
+      .imageBgAr {
+        background-position: center right;
+      }
+      .text {
+        flex: 0 0 60%;
+        padding-inline-end: 200px;
+        @media (max-width: $xl-media) {
+          padding-inline-end: 32px;
+        }
+        @media (max-width: $md-media) {
+          padding-inline-start: 32px;
+        }
+        p {
+          color: $gray-4A;
+          font-size: 18px;
+          line-height: 32px;
+          text-align: justify;
+          font-weight: 400;
+          padding-inline-end: 32px;
+          @media (max-width: $md-media) {
+            padding-inline-end: 0;
+          }
+        }
+      }
+    }
+
+    .role {
+      position: relative;
+      margin-top: 50px;
+      padding: 60px 0px;
+      display: flex;
+      gap: 32px;
+      // background-position: top center;
+      // background-repeat: repeat;
+      // background-size: 8%;
+      // background-position: 0% 0%;
+      // background: url(../../../public/images/slider-bg-removebg-preview.jpg) repeat-x;
+      // background: url(../../../public/images/slider-bg.jpg) repeat-x #EAE6E1;
+      @media (max-width: $md-media) {
+        flex-direction: column;
+      }
+      .beansTxt,
+      .beansTxtAr {
+        position: absolute;
+        bottom: -72px;
+        width: 180px;
+        height: 181px;
+        z-index: 1;
+        @media (max-width: $lg-media) {
+          display: none;
+        }
+      }
+      .beansTxt {
+        right: 0px;
+      }
+      .beansTxtAr {
+        left: 0;
+        img {
+          // @include transform(scaleX(-1))
+        }
+      }
+      .roleImg,
+      .roleImgAr {
+        flex: 0 0 40%;
+        display: flex;
+        align-items: center;
+        img {
+          width: 90%;
+        }
+        @media (max-width: $md-media) {
+          flex: 1;
+          img {
+            width: 70%;
+          }
+        }
+      }
+      .roleImgAr {
+        img {
+          @include transform(scaleX(-1))
+        }
+      }
+      .roleTxt {
+        flex: 0 0 60%;
+        @media (max-width: $md-media) {
+          flex: 1;
+          // margin-inline-start: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+        }
+        .contentBox {
+          width: 80%;
+          background-color: $gray-700;
+          color: $white;
+          padding: 30px 40px;
+          @media (max-width: $lg-media) {
+            width: 90%;
+          }
+          @media (max-width: $md-media) {
+            width: 80%;
+          }
+          @media (max-width: $sm-media) {
+            width: 100%;
+            padding: 30px;
+          }
+          h3 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            color: $primary;
+          }
+          p {
+            font-size: 18px;
+            text-align: justify;
+            width: 80%;
+            &:first-of-type {
+              margin-bottom: 10px;
+            }
+            @media (max-width: $xl-media) {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .sip {
+      position: relative;
+      padding: 40px 0px 30px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 32px;
+      // background-position: top center;
+      // background-repeat: repeat;
+      // background-size: 8%;
+      // background-position: 0% 0%;
+      // background: url(../../../public/images/slider-bg.jpg) repeat-x #EAE6E1;
+      // background-color: $gray-EAE6E1;
+      @media (max-width: $xl-media) {
+        padding: 40px 30px;
+      }
+      @media (max-width: $md-media) {
+        flex-direction: column;
+      }
+      .textbg,
+      .textbgAr {
+        width: 200px;
+        height: 94px;
+        position: absolute;
+        top: 45px;
+        z-index: 1;
+        @media (max-width: $xl-media) {
+          display: none;
+        }
+      }
+      .textbg {
+        left: 30px;
+      }
+      .textbgAr {
+        right: 30px;
+      }
+      .bgLine,
+      .bgLineAr {
+        position: absolute;
+        top: -10px;
+        @media (max-width: $lg-media) {
+          display: none;
+        }
+      }
+      .bgLine {
+        left: 30%;
+      }
+      .bgLineAr {
+        right: 30%;
+        img {
+          @include transform(scaleX(-1));
+        }
+      }
+      
+      .bgLineText,
+      .bgLineTextAr {
+        position: absolute;
+        top: 150px;
+        @media (max-width: $lg-media) {
+          display: none;
+        }
+      }
+      .bgLineText {
+        left: 110px;
+      }
+      .bgLineTextAr {
+        right: 110px;
+        img {
+          // @include transform(scaleX(-1));
+        }
+      }
+
+      .sipBox {
+        // flex: 1;
+        padding: 50px 30px;
+        .title {
+          font-size: 36px;
+          margin-bottom: 16px;
+        }
+        .text {
+          font-size: 18px;
+          line-height: 27px;
+          text-align: justify;
+          // width: 80%;
+        }
+      }
+      .sipBoxLeft {
+        flex: 0 0 45%;
+        background-color: $gray-EAE6E1;
+        // background-color: $white;
+        padding-inline-start: 140px;
+        @media (max-width: $xl-media) {
+          flex: 1 0 45%;
+          padding-inline-start: 30px;
+        }
+        .title {
+          color: $primary;
+        }
+        .text {
+          color: $gray-4A;
+        }
+      }
+      .sipBoxRight {
+        flex: 0 0 40%;
+        background-color: $primary;
+        @media (max-width: $xl-media) {
+          flex: 1 0 45%;
+        }
+        .title {
+          color: $white;
+        }
+        .text {
+          color: $white;
+
+        }
+      }
+    }
+
+    .leads {
+      padding: 40px 0px;
+      .secTitle {
+        background-color: #F5FFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h3 {
+          padding-top: 20px;
+          color: $primary;
+          font-size: 36px;
+          font-weight: bold;
+          line-height: 50px;
+          text-align: center;
+          margin-bottom: 32px;
+        }
+      }
+      .leadsWrapper {
+        display: flex;
+        background-color: #F5FFFF;
+        @media (max-width: $lg-media) {
+          flex-direction: column;
+        }
+        .bgImage,
+        .bgImageAr {
+          flex: 0 0 50%;
+          padding: 32px 0px;
+          img {
+            object-fit: cover;
+            width: 90%;
+          }
+          @media (max-width: $lg-media) {
+            display: none;
+          }
+        }
+        .bgImageAr {
+          img {
+            @include transform(scaleX(-1))
+          }
+        }
+        .content {
+          flex: 0 0 50%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          // justify-content: center;
+          padding: 0px 32px;
+          .leadsBox {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 32px;
+            .title {
+              color: $gray-700;
+              font-size: 24px;
+              font-weight: 600;
+              line-height: 36px;
+              margin-bottom: 8px;
+            }
+            .text {
+              // width: 70%;
+              text-align: center;
+              color: #233746;
+              font-size: 28px;
+              font-style: italic;
+              font-weight: 300;
+              line-height: 43px;
+              margin-bottom: 20px;
+            }
+          }
+        }
+        
+      }
+      .image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -50px;
+        z-index: 2;
+      }
+
+    }
+  }
+}

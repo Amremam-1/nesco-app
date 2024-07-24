@@ -1,0 +1,120 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.prodComment {
+  padding: 16px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  .wrapper {
+    
+    // border-bottom: 1px solid $gray-100;
+    display: flex;
+    gap: 16px;
+    .userImg,
+    .userImgCircle {
+      // flex: 1;
+      @include borderRadius(50%);
+      width: 50px;
+      height: 50px;
+      background-color: $gray-100;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid transparent;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .alias {
+        font-size: 20px;
+        display: flex;
+        gap: 2px;
+        align-items: center;
+        justify-content: center;
+        span {
+          display: block;
+          text-transform: capitalize;
+        }
+        .first {
+          color: $primary;
+        }
+        .second {
+          color: $gray-700;
+        }
+      }
+    }
+    .userImgCircle {
+      border-color: $primary;
+    }
+    .body {
+      flex: 11;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .commentBox {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        @media (max-width: $sm-media) {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        .commentDetails {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 8px;
+          @media (max-width: $sm-media) {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+          .user {
+            .userName {
+              font-size: 16px;
+              font-weight: 400;
+              line-height: 25px;
+              color: $gray-700;
+              text-transform: capitalize;
+            }
+          }
+          .date {
+            font-size: 13px;
+            font-weight: 400;
+            line-height: normal;
+            color: $gray-400;
+          }
+        }
+        .editBtn {
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          svg {
+            cursor: pointer;
+            font-size: 20px;
+            color: $gray-700;
+            @include transition(0.2s);
+            &:hover {
+              color: $primary;
+            }
+          }
+          @media (max-width: $sm-media) {
+            width: fit-content;
+          }
+        }
+      }
+      .commentTxt{
+        font-size: 14px;
+        font-weight: 400;
+        line-height: normal;
+        color: $gray-400;
+        text-transform: capitalize;
+      }
+    }
+  }
+  .updateComment {
+
+  }
+}

@@ -1,0 +1,167 @@
+@import '../../index.scss';
+@import '../../sass/mixins';
+
+
+.registerPage {
+  padding: 64px;
+  @media (max-width: $sm-media) {
+    margin-top: 100px;
+    padding: 64px 32px;
+  }
+  &__wrapper {
+    // width: 500px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    @media (max-width: $xl-media) {
+      width: 70%;
+    }
+    @media (max-width: $lg-media) {
+      width: 90%;
+    }
+    @media (max-width: $md-media) {
+      width: 100%;
+    }
+    .logoContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .title {
+      color: $primary;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 36px;
+    }
+    .registerForm {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      width: 100%;
+      .bottomWrapper {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .terms,
+        .hearOurNews {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          input {
+            width: 20px;
+            height: 20px;
+            border: 1px solid $primary;
+            outline: none;
+            @include borderRadius(4px);
+            color: #00784B;
+            font-size: 18px;
+            font-weight: 500;
+            &:focus,
+            &:hover {
+              box-shadow: $shadow-15;
+            }
+          }
+          label {
+            a {
+              text-decoration: underline;
+              color: $primary;
+            }
+          }
+        }
+        .registerBtn {
+          display: block;
+          font-size: 18px;
+          border: 1px solid;
+          @include borderRadius(4px);
+          padding: 8px 32px;
+          @include transition(0.2s);
+          border-color: $primary;
+          background-color: $primary;
+          color: $white;
+          width: fit-content;
+          &:hover {
+            box-shadow: $shadow-15;
+          }
+        }
+        .forgetPasss {
+          color: $gray-700;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 27px;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .tractTitle {
+      color: $primary;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 36px;
+    }
+    .results {
+      border: 1px solid $gray-c2c8cc;
+      @include borderRadius(6px);
+      overflow: hidden;
+      width: 70%;
+      // margin: 0px auto;
+      // margin-bottom: 32px;
+      @media (max-width: $xl-media) {
+        width: 80%;
+      }
+      @media (max-width: $lg-media) {
+        width: 100%;
+      }
+      .errorText,
+      .successText {
+        font-size: 18px;
+        font-weight: 600;
+        background-color: $gray-f1;
+        border: 4px solid $white;
+        @include borderRadius(4px);
+      }
+      .errorText {
+        color: $danger;
+        padding: 16px 32px;
+      }
+      .successText {
+        color: $success;
+        display: flex;
+        align-items: center;
+        span {
+          padding: 16px 32px;
+          &:first-of-type {
+            flex: 1;
+            display: block;
+            border-inline-end: 2px solid $white;
+            color: $gray-700;
+          }
+          &:last-of-type {
+            flex: 1;
+          }
+        }
+        @media (max-width: $sm-media) {
+          flex-direction: column;
+          align-items: flex-start;
+          span {
+            padding: 16px;
+            &:first-of-type {
+              flex: 1;
+              border-inline-end: none;
+            }
+            &:last-of-type {
+              flex: 1;
+            }
+
+          }
+        }
+      }
+    }
+  }
+  
+}

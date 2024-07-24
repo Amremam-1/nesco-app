@@ -1,0 +1,88 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.userInfo {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  .container {
+    .title {
+      font-size: 18px;
+      color: $primary;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      @media (max-width: $sm-media) {
+        margin-top: 16px;
+      }
+    }
+    .form {
+      padding: 32px 16px;
+      box-shadow: $shadow-12;
+      @include borderRadius(8px);
+      display: flex;
+      gap: 16px;
+      // justify-content: space-between;
+      flex-wrap: wrap;
+
+      .summBox {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 32;
+      }
+      .summartTitle {
+        font-weight: 600;
+        font-size: 18px;
+        color: $success;
+      }
+
+      .goHomeBtn {
+        margin-top: 16px;
+        background-color: $primary;
+        color: $white;
+        border: 1px solid $primary;
+        @include borderRadius(8px);
+        font-size: 20px;
+        padding: 8px 32px;
+        @include transition(0.3s);
+        opacity: 1;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+
+      .uploadFiles {
+        .uploadTitle {
+          font-weight: 600;
+          font-size: 14px;
+          color: $gray-400;
+        }
+        .uploadBtn {
+          display: block;
+          width: fit-content;
+          margin-top: 16px;
+          border: 1px solid $primary;
+          @include borderRadius(4px);
+          @include transition(0.2s);
+          cursor: pointer;
+          padding: 6px 12px;
+          color: $primary;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          svg {
+            color: $primary;
+          }
+          &:hover {
+            background-color: $primary;
+            color: $white;
+            svg {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,199 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.mobMenu,
+.mobMenuHidden {
+  position: fixed;
+  // left: 0;
+  top: 0;
+  z-index: 150000;
+  height: 100%;
+  width: 100vw;
+  @include transition(0.5s);
+  z-index: 20000;
+  overflow-y: hidden;
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    // background-color: $white;
+    .mobMenuWrapper {
+      padding-top: 30px;
+      width: 418px;
+      background-color: rgba(234, 230, 225, 0.72);
+      background-color: $gray-200;
+      overflow-y: scroll;
+      @media (max-width: $md-media) {
+        width: 100vw;
+      }
+      .head {
+        padding: 0px 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        position: relative;
+        .logo {
+          width: 80px;
+          // height: 106px;
+          // width: 15%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .closeBtn {
+          color: $primary;
+          svg {
+            font-size: 42px;
+          }
+        }
+      }
+      .search {
+        margin-top: 10px;
+        padding: 0px 50px;
+        position: relative;
+        &__icon {
+          svg {
+            color: $primary;
+            font-size: 20px;
+          }
+        }
+        .searchBox {
+          height: 50px;
+          width: 300px;
+          position: absolute;
+          z-index: 1;
+          top: 0px;
+          // right: 50px;
+          background-color: #eae6e1;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          @include borderRadius(4px);
+          .closeSearchBtn {
+            height: 50px;
+            padding: 10px 7px;
+            min-width: 30px;
+            background-color: $white;
+            text-align: center;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include transition(0.2s);
+            svg {
+              color: $primary;
+              font-size: 20px;
+            }
+            &:hover {
+              background-color: $danger;
+              svg {
+                color: $white;
+              }
+            }
+          }
+          input {
+            padding: 10px 7px;
+          }
+        }
+      }
+      .linksList {
+        padding: 0px 50px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        // gap: 30px;
+        .listItem {
+          color: $gray-700;
+          font-size: 22px;
+          line-height: 56px;
+          @include transition(0.2s);
+          &:hover {
+            color: $primary;
+          }
+
+          &.listItemDisabled {
+            color: $gray-300;
+            cursor: not-allowed;
+            p {
+              cursor: not-allowed;
+            }
+          }
+        }
+      }
+      .contacts {
+        padding: 30px 50px 30px;
+        background-color: $primary;
+        color: $white;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .location {
+          padding-bottom: 20px;
+          border-bottom: 1px solid $white;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          svg {
+            font-size: 20px;
+          }
+          a {
+            font-size: 18px;
+            font-weight: 500;
+            @include transition(0.2s);
+            &:hover {
+              color: $gray-700;
+            }
+          }
+        }
+        .phone {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          svg {
+            font-size: 20px;
+          }
+          a {
+            font-size: 18px;
+            font-weight: 500;
+            @include transition(0.2s);
+            &:hover {
+              color: $gray-700;
+            }
+          }
+        }
+        .socialList {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          &__item {
+            @include transition(0.2s);
+            svg {
+              font-size: 24px;
+            }
+            &:hover {
+              color: $gray-700;
+            }
+          }
+        }
+      }
+    }
+    .mobMenuOverlay {
+      width: calc(100vw - 418px);
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      @media (max-width: $md-media) {
+        width: 0px;
+      }
+    }
+  }
+}
+
+.mobMenuHidden {
+  width: 0px;
+}

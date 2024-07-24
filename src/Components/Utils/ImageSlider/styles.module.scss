@@ -1,0 +1,39 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.imageSlider {
+  grid-area: gallery;
+  min-width: 300px;
+  min-height: 300px;
+  position: relative;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include transition(0.3s);
+  }
+  .dots {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    .dot {
+      display: block;
+      width: 16px;
+      height: 16px;
+      @include borderRadius(50%);
+      background-color: $gray-700;
+      border: 2px solid $white;
+      outline: 1px solid $primary;
+      cursor: pointer;
+      @include transition(0.2s);
+      &:hover {
+        background-color: $gray-300;
+      }
+    }
+  }
+}

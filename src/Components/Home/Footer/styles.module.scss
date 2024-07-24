@@ -1,0 +1,132 @@
+@import "../../../index.scss";
+@import "../../../sass/mixins";
+.main {
+  background-color: #000;
+  .footer {
+    padding: 60px 0px 30px 0;
+    width: 88%;
+    margin: auto;
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .top {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        @include breakpoints(sm) {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        .text {
+          color: #ddd;
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 21px;
+          text-align: center;
+          margin-bottom: 10px;
+        }
+        .payMethods {
+          border-inline-end: 2px solid $white;
+          padding-inline-end: 30px;
+          @include breakpoints(sm) {
+            border-inline-end: none;
+            padding-inline-end: 0px;
+          }
+          .imgs {
+            width: 190px;
+            height: 47px;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+        }
+        .contactus {
+          a {
+            color: #ddd;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 36px;
+            @include transition(0.2s);
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+      }
+      .bottom {
+        padding-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        @include breakpoints(lg) {
+          flex-direction: column;
+        }
+        .links {
+          display: flex;
+          align-items: center;
+          gap: 16px 32px;
+          @include breakpoints(xl) {
+            flex-wrap: wrap;
+          }
+          @include breakpoints(lg) {
+            flex-direction: column;
+          }
+          .copyrights {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 22px;
+            color: #ddd;
+          }
+          .linksList {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            @include breakpoints(md) {
+              flex-direction: column;
+              gap: 8px;
+            }
+            .item {
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 22px;
+              color: #ddd;
+              padding-inline-end: 16px;
+              @include transition(0.2s);
+              &:not(:last-of-type) {
+                border-inline-end: 1px solid #ddd;
+                @include breakpoints(md) {
+                  border-inline-end: none;
+                }
+              }
+              &:hover {
+                color: $primary;
+              }
+            }
+          }
+        }
+        .socialList {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          &__item {
+            svg {
+              @include transition(0.2s);
+              font-size: 22px;
+              color: $gray-700;
+            }
+            &:hover {
+              svg {
+                color: $primary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

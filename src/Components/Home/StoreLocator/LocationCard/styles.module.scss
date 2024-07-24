@@ -1,0 +1,132 @@
+@import '../../../../index.scss';
+@import '../../../../sass/mixins';
+
+.locationItem {
+  // min-width: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  // gap: 4px;
+  // @media (max-width: $lg-media) {
+  //   width: 70%;
+  // }
+  // @media (max-width: $md-media) {
+  //   width: 90%;
+  // }
+  // @media (max-width: $sm-media) {
+  //   width: 100%;
+  // }
+  .locationHead {
+    padding: 8px 16px;        
+    border: 1px solid $primary;
+    @include borderRadius(4px);
+    background-color: $primary;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    @include transition(0.2s);
+    &:hover {
+      background-color: $gray-500;
+      border-color: $gray-500;
+    }
+    .title {
+      font-size: 22px;
+      font-weight: 600;
+      color: $white;
+      cursor: pointer;
+    }
+    .icons {
+      svg {
+        font-size: 32px;
+        color: $white;
+      }
+    }
+  }
+  .locationDetails {
+    // display: none;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    background-color: $gray-700;
+    color: $white;
+    padding: 16px;
+    border: 1px solid $gray-700;
+    @include borderRadius(4px);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: auto;
+    max-height: 9999px;
+    @include transCustom(all 0.5s cubic-bezier(0,1,0,1));
+    // @include transition(0.4s);
+    .head {
+      display: flex;
+      justify-content: space-between;
+      gap: 2px;
+
+      .locationBTN {
+        cursor: pointer;
+        svg {
+          font-size: 24px;
+          color: $white;
+          @include transition(0.2s);
+        }
+        &:hover {
+          svg {
+            color: $yellow;
+          }
+        }
+      }
+    }
+    .title {
+
+    }
+    .address {
+
+    }
+    .phone {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      a {
+        
+      }
+    }
+  }
+  .locationDetailsHidden {
+    max-height: 0;
+    overflow: hidden;
+  }
+  .locationFooter {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    .maps {
+      .mapLink {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: $white;
+        @include transition(0.2s);
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+    .share {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+      .shareBtn {
+        color: $white;
+        svg {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}

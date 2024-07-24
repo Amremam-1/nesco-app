@@ -1,0 +1,295 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.subMenuDetails {
+  margin-top: 20px;
+  border: 1px solid $gray-100;
+  @include borderRadius(6px);
+  padding: 16px;
+  width: 100%;
+
+  .title {
+    h3 {
+      font-size: 22px;
+      color: $primary;
+    }
+    .menuItemDescr {
+      font-size: 16px;
+      color: $gray-700;
+    }
+  }
+  .details {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    @media (max-width: $lg-media) {
+      flex-direction: column-reverse;
+    }
+    .nutritionalInfo {
+      flex: 0 0 60%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+      @media (max-width: $lg-media) {
+        flex: 1 0 100%;
+      }
+      .mainTitle {
+        background-color: $gray-100;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 8px;
+        cursor: pointer;
+        .title {
+          font-size: 18px;
+          color: $gray-700;
+        }
+        svg {
+          font-size: 26px;
+          color: $gray-700;
+        }
+      }
+      .table {
+        @include transCustom(all 0.5s cubic-bezier(0,1,0,1));
+        // @include transition(0.4s);
+        height: auto;
+        max-height: 9999px;
+        width: 90%;
+        padding-bottom: 32px;
+        @media (max-width: $md-media) {
+          width: 100%;
+        }
+        .prodName {
+          color: $primary;
+          font-size: 26px;
+          margin-bottom: 8px;
+        }
+        .subTitle {
+          padding-top: 16px;
+          padding-bottom: 10px;
+          color: $primary;
+          font-size: 18px;
+        }
+        .nutInfo {
+          padding-inline-start: 32px;
+          border-bottom: 1px solid $primary;
+          padding-bottom: 16px;
+          margin-bottom: 16px;
+          .mass {
+            margin-top: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 64px;
+            @media (max-width: $xs-media) {
+              gap: 32px;
+            }
+            p {
+              font-size: 22px;
+              font-weight: 700;
+              color: $gray-700;
+            }
+          }
+          .amountValue {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 17px;
+            font-weight: 600;
+            .amount {
+              color: $gray-700;
+            }
+            .value {
+              color: $primary;
+            }
+          }
+        }
+        .dailyValue {
+          display: flex;
+          justify-content: flex-end;
+        }
+        .smTable {
+          .head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            border-bottom: 1px solid $gray-300;
+            padding: 8px 0px;
+            .txt {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              span {
+                font-size: 18px;
+                color: $gray-700;
+                &:first-of-type {
+                  font-weight: 600;
+                }
+                &:last-of-type {
+
+                }
+              }
+            }
+            .percentVal {
+              font-size: 18px;
+              color: $primary;
+            }
+          }
+          .content {
+            padding-inline-start: 16px;
+            padding-top: 10px;
+            .line {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 16px;
+              padding: 6px 0px;
+              p {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                span {
+                  font-size: 16px;
+                  color: $gray-600;
+                  &:first-of-type {
+                    font-weight: 600;
+                  }
+                  &:last-of-type {
+
+                  }
+                }
+              }
+              .percentVal {
+                font-size: 18px;
+                color: $primary;
+              }
+            }
+            .note {
+              font-size: 14px;
+              color: $success;
+            }
+          }
+        }
+
+        .moreInfo {
+          .text {
+            line-height: 1.7;
+          }
+          .moreInfoTable {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            @media (max-width: $xxs-media) {
+              font-size: 14px;
+            }
+            &__head {
+              padding: 6px 0px;
+              border-top: 1px solid $gray-300;
+              border-bottom: 1px solid $gray-300;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 10px;
+              th {
+                flex: 2;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                color: $primary;
+                &:first-of-type {
+                  flex: 3;
+                }
+                &:nth-of-type(2) {
+                  // flex: 3;
+                }
+              }
+            }
+            &__body {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 6px;
+              margin-top: 4px;
+              margin-bottom: 4px;
+              &:nth-of-type(odd) {
+                background-color: $gray-100;
+              }
+              &:nth-of-type(even) {
+                background-color: $gray-50;
+              }
+              td {
+                flex: 2;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 3px 0px;
+                &:first-of-type {
+                  flex: 3;
+                }
+              }
+            }
+          }
+        }
+        .allergens {
+          h5 {
+            color: $gray-700;
+            font-size: 18px;
+            font-weight: 700;
+          }
+          p {
+            color: $primary;
+          }
+        }
+      }
+      .tableHidden {
+        max-height: 0;
+        overflow: hidden;
+      }
+      .noInfoFound {
+        color: $danger;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1.7;
+        text-align: center;
+        padding: 0px 16px;
+      }
+    }
+    .image {
+      flex: 1 0 35%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 300px;
+      height: 300px;
+      margin: 0px auto;
+      @media (max-width: $lg-media) {
+        flex: 1 0 100%;
+        width: 400px;
+        height: 400px;
+      }
+      @media (max-width: $sm-media) {
+        width: 350px;
+        height: 350px;
+      }
+      @media (max-width: $xs-media) {
+        width: 300px;
+        height: 300px;
+      }
+      @media (max-width: $xxs-media) {
+        width: 280px;
+        height: 280px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

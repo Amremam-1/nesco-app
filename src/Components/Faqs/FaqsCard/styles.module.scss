@@ -1,0 +1,104 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.faqsListItem {
+  border-bottom: 1px solid $primary;
+  .qLetter,
+  .aLetter {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    font-size: 18px;
+    font-weight: 500;
+    color: $white;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      right: 0;
+      width: 32px;
+      height: 32px;
+      line-height: 0;
+      @include transform(rotate(20deg));
+      background-color: $primary;
+      @include borderRadius(4px);
+      z-index: -1;
+    }
+  }
+
+  .question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    cursor: pointer;
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      .qLetter {
+        line-height: 0;
+      }
+      .quesTxt {
+        color: $gray-4A;
+        font-size: 20px;
+      }
+    }
+    .icons {
+      font-size: 36px;
+      color: $primary;
+    }
+  }
+  .answer {
+    display: flex;
+    // align-items: center;
+    gap: 24px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    // @include transCustom(all 0.5s cubic-bezier(0,1,0,1));
+    @include transition(0.4s);
+    height: auto;
+    max-height: 9999px;
+    width: 90%;
+    .aLetter {
+      &::before {
+        background-color: $gray-700;
+        
+      }
+    }
+    .answerBox {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      .ansTxt {
+        color: $gray-4A;
+        font-size: 18px;
+      }
+      .ansLink {
+        color: $primary;
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration: underline;
+        @include transition(0.2s);
+        &:hover {
+          color: $gray-700;
+        }
+      }
+    }
+  }
+  .answerHidden {
+    max-height: 0;
+    overflow: hidden;
+  }
+  @media (max-width: $sm-media) {
+
+  }
+}

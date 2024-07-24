@@ -1,0 +1,121 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+
+.mainSlider {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-position: top center;
+  // background-image: url(../../../../public/images/new-bg.png);
+  background-repeat: repeat;
+  background-size: 8%;
+  background-position: 0% 0%;
+  // background: url(../../../../public/images/slider-bg.jpg) repeat-x #EAE6E1;
+  // background: url(../../../../public/images/product-bg.png) repeat-x #EAE6E1;
+  // background: url(../../../../public/images/product-bg.png) repeat-x #EAE6E1;
+  @media (max-width: $xl-media) {
+    background-size: 10%;
+    padding-top: 60px;
+    padding-top: 60px;
+  }
+  @media (max-width: $md-media) {
+    background-size: 12%;
+  }
+  @media (max-width: $sm-media) {
+    background-size: 15%;
+  }
+  @media (max-width: $xs-media) {
+    background-size: 20%;
+  }
+
+  .container {
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // flex-direction: column;
+    // padding-left: 50px;
+    // padding-right: 50px;
+    width: 90%;
+    margin: 0px auto;
+    @media (max-width: $sm-media) {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+      width: 100% !important;
+    }
+    .carouselWrapper {
+      margin: 0px auto;
+      text-align: center;
+      // color: $primary;
+      // .swiper-pagination, .swiper-pagination-clickable, .swiper-pagination-bullets, .swiper-pagination-horizontal {
+      //   margin-top: 50px;
+      // }
+      .mySwiper {
+        .swiper-button-next,
+        .swiper-button-prev {
+          // background-color: transparent;
+          &::after {
+            color: $primary !important;
+          }
+        }
+      }
+      .sliderImage {
+        height: 300px;
+        @media (min-width: $sm-media) {
+          height: 300px;
+        }
+        // height: calc(100vh - 80px );
+        @include borderRadius(8px);
+        overflow: hidden;
+      }
+      img {
+        @include borderRadius(8px);
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 27px;
+      text-align: center;
+      color: $gray-700;
+      margin-bottom: 60px;
+      text-transform: uppercase;
+    }
+    .discoverBtn {
+      width: fit-content;
+      padding: 16px 32px;
+      border: 1px solid $primary;
+      @include borderRadius(4px);
+      margin: 46px auto 0px;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 27px;
+      text-align: center;
+      color: $gray-700;
+      background-color: $primary;
+      text-align: center;
+      @include transition(0.2s);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @media (max-width: $sm-media) {
+        padding: 16px;
+      }
+      &:hover {
+        background-color: transparent;
+        border-color: $gray-700;
+      }
+    }
+  }
+}
+
+// .container {
+//   @media (min-width: $sm-media) {
+//     padding-left: 20px !important;
+//     padding-right: 20px !important;
+//     width: 100% !important;
+//   }
+// }
+

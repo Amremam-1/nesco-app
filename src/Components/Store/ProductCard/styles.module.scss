@@ -1,0 +1,227 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+
+.prodCard {
+  // flex: 0 0 25%;
+  // max-width: 25%;
+  min-width: 220px;
+  // max-width: 250px;
+  // min-height: 312px;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  @media (max-width: $xl-media) {
+    min-width: 200px;
+  }
+  @media (max-width: $xs-media) {
+    max-width: 250px;
+    margin: 0px auto;
+    min-width: 150px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  &__container {
+    padding: 16px 0px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    // margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include borderRadius(8px);
+    @include transition(0.1s);
+    // cursor: pointer;
+    .cartLink {
+      .innerCard {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        .image {
+          // max-height: 170px;
+          // max-width: 90px;
+          // max-width: 140px;
+          // width: 200px;
+          // height: 200px;
+          // max-width: 100%;
+          min-width: 150px;
+          min-height: 150px;
+          width: 100%;
+          height: 100%;
+          max-height: 220px;
+          max-width: 220px;
+          @include borderRadius(8px);
+          overflow: hidden;
+          @media (max-width: $sm-media) {
+            min-width: 130px;
+            min-height: 130px;
+            max-height: 200px;
+            max-width: 200px;
+          }
+          @media (max-width: $xs-media) {
+            min-width: 130px;
+            min-height: 130px;
+            max-height: 150px;
+            max-width: 150px;
+          }
+          @media (max-width: $xxs-media) {
+            width: 100%;
+            height: 100%;
+            max-width: 220px;
+            max-height: 220px;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .prodDetails {
+
+          .title {
+            font-size: 18px;
+            font-weight: 600;
+            padding-top: 20px;
+            text-transform: capitalize;
+          }
+          .size {
+
+          }
+          .price,
+          .priceBefore {
+            color: $primary;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 27px;
+          }
+          .priceBefore {
+            text-decoration: line-through;
+            color: $danger;
+          }
+        }
+      }
+    }
+    .addBtns {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      svg {
+        font-size: 20px;
+        color: $white;
+      }
+      // .addToFav,
+      // .addToCard {
+        // width: 32px;
+        // height: 32px;
+        // border: 1px solid transparent;
+        // @include borderRadius(50%);
+        // padding: 2px;
+        // display: grid;
+        // place-items: center;
+        // @include transition(0.2s);
+        // &:hover {
+        //   border-color: $white;
+        //   background-color: $white;
+        //   svg {
+        //     color: $primary;
+        //   }
+        // }
+      // }
+      .addToFav {
+        svg {
+          @include transition(0.2s);
+          color: $danger;
+        }
+        &:hover {
+          svg {
+            color: $danger;
+            fill: $danger;
+          }
+        }
+      }
+      .addToCard {
+        svg {
+          @include transition(0.2s);
+          color: $gray-700;
+        }
+        &:hover {
+          svg {
+            color: $gray-700;
+            fill: $gray-700;
+          }
+        }
+      }
+      .addToFavClicked {
+        svg {
+          color: $danger;
+          fill: $danger;
+        }
+      }
+      .addToCardClicked {
+        svg {
+          color: $gray-700;
+          fill: $gray-700;
+        }
+      }
+    }
+
+    .addBtnsHidden {
+      display: none;
+    }
+    .quickAddToCart {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0px auto;
+      max-width: 140px;
+      button {
+        width: 100%;
+        display: block;
+        padding: 6px 12px;
+        font-weight: 600;
+        color: $white;
+        background-color: $primary;
+        letter-spacing: 0.7px;
+        @include borderRadius(4px);
+        @include transition(0.1s);
+      }
+    }
+    &:hover {
+      // background: url(../../../../public/images/green_bg_pattern.png) repeat center top;
+      // background: url(../../../../public/images/new-bg.jpg) repeat center top $primary;
+      background-color: $primary;
+      background-size: 100%;
+      color: $white;
+      .cartLink {
+        .innerCard {
+          img {
+          }
+          .prodDetails {
+            .title {
+            }
+            .size {
+            }
+            .price {
+              color: $white;
+            }
+          }
+        }
+      }
+      .quickAddToCart {
+        button {
+          background-color: $gray-700;
+          // color: $primary;
+        }
+      }
+    }
+  }
+
+}

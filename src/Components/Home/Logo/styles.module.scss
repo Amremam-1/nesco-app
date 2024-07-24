@@ -1,0 +1,13 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.logo {
+  width: 110px;
+  // height: 106px;
+  // width: 15%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

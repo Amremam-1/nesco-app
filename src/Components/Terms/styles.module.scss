@@ -1,0 +1,106 @@
+@import '../../index.scss';
+@import '../../sass/mixins';
+
+.terms {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  @media (max-width: $sm-media) {
+    margin-top: 190px;
+  }
+  &__container {
+    width: 90%;
+    margin: 0px auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    @media (max-width: $sm-media) {
+      width: 95%;
+    }
+    .wrapper {
+      .textBox {
+        .secTitle {
+          font-size: 28px;
+          margin-top: 32px;
+          margin-bottom: 12px;
+          font-weight: 600;
+          line-height: 1.2;
+          color: $gray-700;
+        }
+        .contentList {
+          padding-top: 16px;
+        }
+        .textParg{
+          margin-bottom: 16px;
+          color: #444444;
+          font-size: 18px;
+          line-height: 27px;
+          text-align: justify;
+        }
+        .listItem,
+        .listItem2 {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          margin-bottom: 8px;
+          color: #444444;
+          font-size: 18px;
+          line-height: 27px;
+          @media (max-width: $sm-media) {
+            align-items: start;
+          }
+          svg {
+            @include transition(0.2s);
+            font-size: 14px;
+            color: #444444;
+            @media (max-width: $sm-media) {
+              margin-top: 6px;
+              flex: 0 0 5%;
+            }
+          }
+          a {
+            @include transition(0.2s);
+          }
+          &:hover {
+            svg,
+            a {
+              color: $primary;
+            }
+          }
+        }
+        .listItem2 {
+          margin-bottom: 4px;
+          align-items: start;
+          svg {
+            @include transition(0.2s);
+            font-size: 14px;
+            color: #444444;
+            flex: 0 0 2%;
+            margin-top: 6px;
+            @media (max-width: $sm-media) {
+              flex: 0 0 5%;
+            }
+          }
+          &:last-of-type {
+            margin-bottom: 16px;
+          }
+          .textParg {
+            margin-bottom: 0;
+          }
+        }
+        .textParg1 {
+          margin-top: 10px;
+        }
+        .textParg2 {
+          margin-bottom: 16px;
+        }
+        .textParg1,
+        .textParg2 {
+          color: #7C7C7C;
+          font-size: 18px;
+          line-height: 27px;
+        }
+      }
+    }
+    
+
+  }
+}

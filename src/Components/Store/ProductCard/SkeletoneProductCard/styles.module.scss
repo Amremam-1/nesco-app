@@ -1,0 +1,42 @@
+@import '../../../../index.scss';
+@import '../../../../sass/mixins';
+
+.skProdCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  width: 216px;
+  // height: 348px;
+  padding: 20px;
+  .image,
+  .title,
+  .size,
+  .price {
+    background-color: $gray-100;
+    width: 160px;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    -webkit-animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  .image {
+    height: 110px;
+  }
+  .title {
+    height: 48px;
+  }
+  .size {
+    height: 22px;
+    width: 110px;
+  }
+  .price {
+    width: 110px;
+    height: 28px;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 50%;
+  }
+}

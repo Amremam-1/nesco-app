@@ -1,0 +1,58 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+
+.ourMenuContent {
+  flex: 1 0 70%;
+  width: 100%;
+  @media (max-width: $xl-media) {
+  }
+  .top {
+    border: 1px solid $primary;
+    @include borderRadius(6px);
+    padding: 16px;
+
+    .head {
+      .path {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        border-bottom: 1px solid $primary;
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+        span {
+          font-size: 18px;
+          &:first-of-type {
+            color: $primary;
+          }
+        }
+      }
+      .listTitle {
+        color: $primary;
+        margin-bottom: 16px;
+      }
+    }
+    .subMenuList {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px 16px;
+      margin-bottom: 20px;
+      @media (max-width: $xl-media) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media (max-width: $lg-media) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: $md-media) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media (max-width: $sm-media) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: $xxs-media) {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+  }
+}

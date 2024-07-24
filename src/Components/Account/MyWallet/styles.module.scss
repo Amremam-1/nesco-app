@@ -1,0 +1,61 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+
+.myWallet {
+  position: relative;
+  padding-bottom: 30px;
+  &__container {
+    .title {
+      color: $primary;
+      font-size: 18px;
+      font-weight: normal;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .walletForm,
+    .walletFormHidden {
+      margin-top: 30px;
+      width: 80%;
+      height: auto;
+      max-height: 9999px;
+      @include transition(0.5s);
+      opacity: 1;
+      @media (max-width: $md-media) {
+        width: 90%;
+      }
+      @media (max-width: $sm-media) {
+        width: 100%;
+      }
+      .inputsBox {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 16px;
+        width: 100%;
+      }
+      .sendBtn {
+        margin-top: 20px;
+        display: block;
+        font-size: 18px;
+        border: 1px solid;
+        @include borderRadius(4px);
+        padding: 8px 32px;
+        @include transition(0.2s);
+        border-color: $primary;
+        background-color: $primary;
+        color: $white;
+        width: fit-content;
+        &:hover {
+          box-shadow: $shadow-15;
+        }
+      }
+    }
+    .walletFormHidden {
+      max-height: 0;
+      overflow: hidden;
+    }
+  }
+}

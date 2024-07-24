@@ -1,0 +1,310 @@
+// @import url('https://fonts.cdnfonts.com/css/swis721-bt');
+@import "./fonts";
+
+$white: #fff;
+$black: #000;
+// $primary: #00784B;
+// $primary: #1F4758;
+$primary: #7fc5d6;
+$secondary: #333333;
+$warning: #ffc62a;
+$danger: rgb(245, 81, 87);
+$success: #0a0c0b;
+$info: #5196f3;
+$yellow: #f2c652;
+
+$background: #1d1f1f;
+$black-2C: #2c2c2c;
+// $gray-700 : #233746;
+// $gray-700 : #7FC5D6;
+$gray-233746: #233746;
+$gray-700: #1f4758;
+$gray-600: #333333;
+$gray-500: #444444;
+$gray-495057: #495057;
+$gray-4A: #4a4a4a;
+$gray-4D: #4d4d4d;
+$gray-400: #666666;
+$gray-979797: #979797;
+$gray-929ca3: #929ca3;
+$gray-9cc6b6: #9cc6b6;
+$gray-300: #a5a5a5;
+$gray-ced4da: #ced4da;
+$gray-c2c8cc: #c2c8cc;
+$gray-200: #d6d6d6;
+$gray-250: #dee2e6;
+$gray-d8: #d8d8d8;
+$gray-DEDEDE: #dedede;
+$gray-EAE6E1: #eae6e1;
+$gray-E5: #e5e5e5;
+$gray-EA: #eaeaea;
+$gray-edebe9: #edebe9;
+$gray-100: #eeeeee;
+$gray-50: #f8f8f8;
+$gray-f1: #f1f1f1;
+$gray-fa: #fafafa;
+$gray-f9f8f7: #f9f8f7;
+$white: #ffffff;
+
+$green-28a745: #28a745;
+$gray-343a40: #343a40;
+$active-007bff: #007bff;
+$white-09: rgba(255, 255, 255, 0.9);
+$cart-17a2b8: #17a2b8;
+
+$light-green: rgba(214, 248, 240, 0.5);
+$overflow-white: rgba(255, 255, 255, 0.6);
+$overflow-black: rgba(0, 0, 0, 0.1);
+$overflow-black5: rgba(0, 0, 0, 0.5);
+
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;
+$radius-xl: 24px;
+$radius-xxl: 32px;
+
+$shadow-1: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+$shadow-2: rgba(99, 99, 99, 0.1) 0px 0px 4px 0px;
+$shadow-3: rgb(196 196 196/25%) 0 4px 34px;
+$shadow-4: hsl(220deg 23% 97%) 0 4px 15px;
+$shadow-5: #e0ebff 0 4px 34px;
+$shadow-6: 7px 8px 9px 0px rgba(0, 0, 0, 0.1);
+$shadow-7: 0 8px 32px rgba(0, 0, 0, 0.25);
+
+$shadow-10: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+$shadow-11: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+$shadow-12: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
+$shadow-13: 3px 0 4px 0 rgba(204, 204, 204, 0.6);
+$shadow-14: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+$shadow-15: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+$shadow-101: 0 0 0 0.2rem rgba(245, 81, 87, 0.3);
+$shadow-16: 0 3px 5px 0 rgba(0, 0, 0, 0.4);
+$shadow-17: 1px 1px 3px;
+
+$xxs-media: 370px;
+$xs-media: 450px;
+$sm-media: 576px;
+$md-media: 768px;
+$lg-media: 992px;
+$xl-media: 1200px;
+$xxl-media: 1400px;
+
+$Roboto-font: "Roboto", sans-serif;
+$Cairo-font: "Cairo", sans-serif;
+$Poppins-font: "Poppins", sans-serif;
+
+$arkipelago-font: "arkipelago", sans-serif;
+$themify-font: "themify", sans-serif;
+$bebasbeua-font: "bebasbeua", sans-serif;
+
+// --------------------------------------------------------------
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  //height: 100vh;
+  transition: all 700ms ease 0s;
+  -webkit-transition: all 700ms ease 0s;
+  -moz-transition: all 700ms ease 0s;
+  -ms-transition: all 700ms ease 0s;
+  -o-transition: all 700ms ease 0s;
+}
+
+body {
+  font-size: 1rem;
+  // color: $main-black-color;
+  line-height: 1.5;
+  // direction: rtl;
+  // background-color: $white;
+  background-color: rgb(255, 251, 242);
+  // font-family: $Cairo-font;
+  // font-family: Swis721BT, sans-serif;
+  font-family: "Swis721BT", $Cairo-font;
+  // font-family: "naskh-swashes";
+  font-weight: 300;
+
+  // width: 100%;
+  // height: 100%;
+  // overflow: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  background-color: transparent;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  // background-color: var(--white);
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  // box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: $gray-50;
+}
+
+body::-webkit-scrollbar-thumb {
+  // background-color: $green-28a745;
+  // outline: 1px solid $green-28a745;
+  background-color: $gray-700;
+  outline: 1px solid $gray-700;
+}
+
+// ------------------------------------
+.pageTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    color: $primary;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 50px;
+    text-align: center;
+    padding-bottom: 60px;
+    @media (max-width: $sm-media) {
+      font-size: 36px;
+    }
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  &::after {
+    color: $primary !important;
+  }
+}
+
+.swiper-pagination-bullet {
+}
+.swiper-pagination-bullet-active {
+  background-color: $primary !important;
+}
+
+.homePage {
+  // scroll-behavior: auto;
+  // scroll-snap-type: y mandatory;
+  // overflow-y: scroll;
+  // height: 100vh;
+}
+
+// .scrollSection {
+//   @media(min-width: $sm-media) {
+//     scroll-snap-align: start;
+//     scroll-margin-top: 80px;
+//     height: calc(100vh - 80px);
+//     // scroll-snap-stop: normal;
+//     // scroll-behavior: smooth;
+//   }
+// }
+
+// .scrollSection2 {
+//   @media (min-width: $sm-media) {
+//     scroll-snap-align: center;
+//     scroll-margin-top: 80px;
+//     height: calc(100vh - 80px);
+//     // scroll-snap-stop: normal;
+//     // scroll-behavior: smooth;
+//     // min-height: 100%;
+//   }
+// }
+
+// .scrollSection3 {
+//   @media (min-width: $sm-media) {
+//     scroll-snap-align: start;
+//     scroll-margin-top: 100px;
+//     height: calc(100vh - 80px);
+//     // scroll-snap-stop: normal;
+//     // scroll-behavior: smooth;
+//   }
+// }
+
+// ---------------------------------
+
+.custom {
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+
+// .scrollSection {
+//   @media (min-width: $sm-media) {
+//     scroll-snap-align: start;
+//     scroll-margin-top: 80px;
+//     scroll-snap-stop: normal;
+//     scroll-behavior: smooth;
+//   }
+// }
+
+// .scrollSection2 {
+//   @media (min-width: $sm-media) {
+//     scroll-snap-align: center;
+//     scroll-margin-top: 80px;
+//     scroll-snap-stop: normal;
+//     scroll-behavior: smooth;
+//     // min-height: 100%;
+//   }
+// }
+
+// .scrollSection3 {
+//   @media (min-width: $sm-media) {
+//     scroll-snap-align: start;
+//     scroll-margin-top: 100px;
+//     scroll-snap-stop: normal;
+//     scroll-behavior: smooth;
+//   }
+// }
+
+.locationDot {
+  color: $primary !important;
+  fill: $white;
+  font-size: 22px !important;
+}
+
+.secContainer {
+  max-width: 1170px;
+  margin-right: auto;
+  margin-left: auto;
+}

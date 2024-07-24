@@ -1,0 +1,128 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+
+.wishListCard {
+  position: relative;
+  background-color: $gray-fa;
+  border: 1px solid $gray-E5;
+  @include borderRadius(4px);
+
+  &__container {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    @media (max-width: $xl-media) {
+      gap: 32px;
+    }
+    @media (max-width: $lg-media) {
+      gap: 20px;
+    }
+    @media (max-width: $md-media) {
+      flex-direction: column;
+      gap: 16px;
+    }
+    .removeBtn {
+      flex: 0 0 5%;
+      cursor: pointer;
+      padding-left: 8px;
+      padding-right: 8px;
+      opacity: 0.3;
+      // width: 50px;
+      // height: 50px;
+      // border: 1px solid $danger;
+      // @include borderRadius(50%);
+      @include transition(0.2s);
+      svg {
+        color: $danger;
+        font-size: 32px;
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .image {
+      flex: 0 0 12%;
+      width: 57px;
+      // height: 82px;
+      width: 80px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .desc {
+      flex: 1 0 30%;
+      @media (max-width: $md-media) {
+        text-align: center;
+      }
+      .prodTitle {
+        color: $gray-700;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 27px;
+        a {
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+      .prodSize {
+        color: $gray-700;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 27px;
+      }
+    }
+
+    .price {
+      flex: 1 0 15%;
+      @media (max-width: $md-media) {
+        text-align: center;
+      }
+      .text {
+        font-size: 16px;
+        margin-bottom: 4px;
+        font-weight: 600;
+        color: $gray-4A;
+      }
+      .prodPrice {
+        color: $primary;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 27px;
+        span {
+          &:first-of-type {
+            padding-inline-end: 4px;
+          }
+        }
+      }
+    }
+
+    .addToCartBtn {
+      flex: 1 0 15%;
+      display: flex;
+      justify-content: flex-end;
+      @media (max-width: $xxl-media) {
+        flex: 1 0 20%;
+      }
+      button {
+        padding: 16px 8px;
+        letter-spacing: 1px;
+        background-color: $primary;
+        color: $white;
+        font-size: 14px;
+        font-weight: 600;
+        @include borderRadius(4px);
+        @include transition(0.2s);
+        &:hover {
+          background-color: $success;
+        }
+      }
+    }
+  }
+}

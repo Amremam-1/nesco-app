@@ -1,0 +1,312 @@
+@import '../../index.scss';
+@import '../../sass/mixins';
+
+
+.cart {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  @media (max-width: $sm-media) {
+    margin-top: 190px;
+  }
+  &__container {
+    width: 85%;
+    margin: 0px auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    @media (max-width: $xl-media) {
+      width: 90%;
+    }
+    @media (max-width: $sm-media) {
+      width: 95%;
+    }
+    .secTitle {
+      font-size: 22px;
+      color: $primary;
+      margin-bottom: 24px;
+    }
+    .emptyCart {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 32px;
+      .emTitle {
+        color: $gray-700;
+        font-size: 22px;
+      }
+      .emIcon,
+      .emIconAr {
+        font-size: 52px;
+        color: $gray-495057;
+      }
+      .emIconAr {
+        @include transform(scaleX(-1));
+      }
+      .emShopNow {
+        font-size: 18px;
+        font-weight: bold;
+        background-color: $primary;
+        border: 1px solid $primary;
+        color: $white;
+        padding: 8px 16px;
+        @include borderRadius(4px);
+        @include transition(0.2s);
+        &:hover {
+          background-color: $white;
+          color: $primary;
+        }
+      }
+
+    }
+    .cartForm {
+      .cartItemsList {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+      }
+      .promotion {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 32px;
+        margin-bottom: 20px;
+        label {
+          color: $primary;
+          font-size: 18px;
+        }
+        .promotionBox {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          @media (max-width: $sm-media) {
+            flex-direction: column;
+          }
+          .promoInput {
+            height: 42px;
+            border: 1px solid $primary;
+            @include borderRadius(4px);
+            padding: 8px;
+            width: 300px;
+            outline: none;
+            @include transition(0.2s);
+            background-color: $gray-100;
+            &:focus {
+              box-shadow: $shadow-15;
+            }
+            @media (max-width: $sm-media) {
+              width: 100%;
+            }
+          }
+          .promoBtn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 42px;
+            background-color: $gray-4A;
+            border: 1px solid $gray-4A;
+            color: $white;
+            width: 110px;
+            font-size: 18px;
+            @include borderRadius(4px);
+            @include transition(0.2s);
+            &:hover {
+              background-color: $primary;
+              border-color: $primary;
+            }
+          }
+        }
+        .couponMsgBox {
+          margin-top: 8px;
+          .couponMsg {
+            color: $danger;
+            font-size: 18px;
+            font-weight: 400;
+            text-transform: capitalize;
+          }
+        }
+      }
+      // .promotion {
+      //   display: flex;
+      //   flex-direction: column;
+      //   gap: 8px;
+      //   margin-top: 32px;
+      //   margin-bottom: 20px;
+      //   label {
+      //     color: $primary;
+      //     font-size: 18px;
+      //   }
+      //   .promotionBox {
+      //     display: flex;
+      //     align-items: center;
+      //     gap: 16px;
+      //     @media (max-width: $sm-media) {
+      //       flex-direction: column;
+      //     }
+      //     .promoInput {
+      //       height: 42px;
+      //       border: 1px solid $primary;
+      //       @include borderRadius(4px);
+      //       padding: 8px;
+      //       width: 300px;
+      //       outline: none;
+      //       @include transition(0.2s);
+      //       background-color: $gray-100;
+      //       &:focus {
+      //         box-shadow: $shadow-15;
+      //       }
+      //       @media (max-width: $sm-media) {
+      //         width: 100%;
+      //       }
+      //     }
+      //     .promoBtn {
+      //       display: flex;
+      //       align-items: center;
+      //       justify-content: center;
+      //       height: 42px;
+      //       background-color: $gray-4A;
+      //       border: 1px solid $gray-4A;
+      //       color: $white;
+      //       width: 110px;
+      //       font-size: 18px;
+      //       @include borderRadius(4px);
+      //       @include transition(0.2s);
+      //       &:hover {
+      //         background-color: $primary;
+      //         border-color: $primary;
+      //       }
+      //     }
+      //   }
+      // }
+      .totalDetails {
+        background-color: $gray-EA;
+        @include borderRadius(5px);
+        padding: 16px 20px;
+        .subTotal,
+        .shippingFees,
+        .vat,
+        .topText {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 32px;
+          .text {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 27px;
+          }
+          .value {
+            color: $primary;
+            font-size: 18px;
+            font-weight: bold;
+          }
+        }
+        .subTotal,
+        .shippingFees,
+        .vat {
+          padding: 8px 16px;
+          border-bottom: 1px solid $gray-979797;
+        }
+        .total {
+          padding: 8px 16px;
+          .topText { 
+            .totalText {
+              font-size: 18px;
+              font-weight: 700;
+              line-height: 27px;
+            }
+            .totalVal {
+              color: $primary;
+              font-size: 24px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      .submition {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+        @media (max-width: $xl-media) {
+          flex-direction: column;
+        }
+        .btns {
+          display: flex;
+          align-items: center;
+          gap: 52px;
+          @media (max-width: $md-media) {
+            gap: 32px;
+            flex-direction: column;
+            width: 100%;
+          }
+          @media (max-width: $sm-media) {
+            width: 100%;
+          }
+          .saveBtn,
+          .proceedBtn,
+          .orderBtn {
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: 400;
+            display: block;
+            @include borderRadius(4px);
+            @include transition(0.3s);
+
+            @media (max-width: $md-media) {
+              width: 70%;
+              // flex: 1 0 100%;
+            }
+            @media (max-width: $sm-media) {
+              width: 90%;
+            }
+          }
+          .saveBtn {
+            border: 1px solid $gray-700;
+            background-color: $white;
+            color: $gray-700;
+            &:hover {
+              background-color: $gray-700;
+              color: $white;
+            }
+            @media (max-width: $md-media) {
+              width: fit-content;
+            }
+          }
+          .proceedBtn,
+          .orderBtn {
+            border: 1px solid $primary;
+            background-color: $primary;
+            color: $white;
+            opacity: 1;
+            text-align: center;
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+          .proceedBtn {
+            @include transition(0.2s);
+            &:disabled {
+              cursor: not-allowed;
+              background-color: $gray-100;
+              border-color: $gray-100;
+            }
+          }
+          .orderBtn {
+            border-color: $danger;
+            background-color: $danger;
+          }
+        }
+      }
+      
+      .note {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 18px;
+        color: #868686;
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+@import '../../../../index.scss';
+@import '../../../../sass/mixins';
+
+.singleNews {
+  &__container {
+    width: 90%;
+    margin: 30px auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    .back {
+      color: $primary;
+      border-bottom: 2px solid $primary;
+      padding-bottom: 8px;
+      width: fit-content;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      @include transition(0.2s);
+      &:hover {
+        color: $gray-700;
+        border-color: $gray-700;
+      }
+    }
+    .body {
+      .title {
+        color: $primary;
+        font-size: 26px;
+        margin-bottom: 16px;
+      }
+      .date {
+        color: $gray-700;
+        margin-bottom: 8px;
+      }
+      .text {
+        font-size: 18px;
+        line-height: 1.7;
+        color: $gray-400;
+      }
+    }
+    .icons {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      .btns {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        svg {
+          font-size: 20px;
+          color: $primary;
+          @include transition(0.2s);
+          &:hover {
+            color: $gray-700;
+          }
+        }
+        button {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          border: 1px solid $primary;
+          @include borderRadius(4px);
+          padding: 16px 32px;
+          @include transition(0.3s);
+          span {
+            font-size: 18px;
+            font-weight: 600;
+            color: $primary;
+          }
+          &:hover {
+            background-color: $gray-700;
+            border-color: $gray-700;
+            span, svg {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .image {
+    height: calc(100vh - 80px);
+    width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      // object-fit: cover;
+    }
+  }
+}

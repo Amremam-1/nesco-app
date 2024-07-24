@@ -1,0 +1,62 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.gallery {
+  &__wrapper {
+    width: 90%;
+    margin: 0px auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      .selectedYear {
+        .year {
+          color: $primary;
+        }
+      }
+      .selectYear {
+        display: flex;
+        justify-content: flex-end;
+        select {
+          border: 1px solid $primary;
+          outline: none;
+          padding: 4px 16px;
+          @include borderRadius(4px);
+          color: $primary;
+        }
+      }
+    }
+  }
+  .imgsGallery {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @media (max-width: $xxl-media) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: $lg-media) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $sm-media) {
+      grid-template-columns: 1fr;
+    }
+    .image {
+      max-height: 400px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @include transition(0.5s);
+      }
+      &:hover {
+        img {
+          @include transform(scale(1.3) rotate(3deg));
+        }
+      }
+    }
+  }
+}

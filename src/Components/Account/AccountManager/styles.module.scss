@@ -1,0 +1,86 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.accountManager {
+  position: relative;
+  padding-bottom: 30px;
+  &__container {
+    .title {
+      color: $primary;
+      font-size: 18px;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    
+    .accoutMangForm {
+      width: 80%;
+      @media (max-width: $md-media) {
+        width: 90%;
+      }
+      @media (max-width: $sm-media) {
+        width: 100%;
+      }
+      .inputsBox {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 16px;
+        width: 100%;
+      }
+      hr {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        border: 1px solid $gray-100;
+      }
+      .bottomWrapper {
+        position: relative;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .terms,
+        .hearOurNews {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          input {
+            width: 20px;
+            height: 20px;
+            border: 1px solid $primary;
+            outline: none;
+            @include borderRadius(4px);
+            color: #00784B;
+            font-size: 18px;
+            font-weight: 500;
+            &:focus,
+            &:hover {
+              box-shadow: $shadow-15;
+            }
+          }
+          label {
+            color: $gray-4A;
+            font-weight: 500;
+          }
+        }
+        .sendBtn {
+          margin-top: 20px;
+          display: block;
+          font-size: 18px;
+          border: 1px solid;
+          @include borderRadius(4px);
+          padding: 8px 32px;
+          @include transition(0.2s);
+          border-color: $primary;
+          background-color: $primary;
+          color: $white;
+          width: fit-content;
+          &:hover {
+            box-shadow: $shadow-15;
+          }
+        }
+      }
+    }
+  }
+}

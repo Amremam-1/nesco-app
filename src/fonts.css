@@ -1,0 +1,93 @@
+@font-face {
+  font-family: Swis721BT;
+  src: url('./fonts/Swiss721BT-Thin.otf') format("open type");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Swis721BT;
+  src: url('./fonts/Swis721_Lt_BT_Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Swis721BT;
+  src: url('./fonts/Swiss-721-BT-Font.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Swis721BT;
+  src: url('./fonts/Swiss 721 Medium BT.ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Swis721BT;
+  src: url('./fonts/Swis721_BT_Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Swis721BT;
+  src: url('./fonts/Swiss721BT-BlackExtended.otf');
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: arkipelago;
+  src: url('./fonts/sugre/arkipelago-webfont.woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: arkipelago;
+  src: url('./fonts/sugre/arkipelago-webfont.woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: arkipelago;
+  src: url('./fonts/sugre/arkipelago-webfont.woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+@font-face {
+  font-family: themify;
+  src: url('./fonts/sugre/themify.woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: bebasbeua;
+  src: url('./fonts/sugre/bebasneue-bold-webfont.woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: bebasbeua;
+  src: url('./fonts/sugre/bebasneue-bold-webfont.woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: bebasbeua;
+  src: url('./fonts/sugre/bebasneue-bold-webfont.woff');
+  font-weight: 500;
+  font-style: normal;
+}

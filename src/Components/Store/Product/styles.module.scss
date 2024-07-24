@@ -1,0 +1,338 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.productWrapper {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 100px;
+  margin-bottom: 100px;
+  position: relative;
+  @media (max-width: $md-media) {
+    max-width: 540px;
+    margin: 0px auto;
+  }
+  @media (max-width: $sm-media) {
+    max-width: 100%;
+    margin: 0px auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    .productCategory {
+      .categoryTitle {
+        color: $gray-700;
+        font-size: 16px;
+        font-weight: 600;
+        padding-top: 50px;
+        text-transform: capitalize;
+      }
+    }
+    .prodContent {
+      position: relative;
+      display: flex;
+      gap: 32px;
+      @media (max-width: $md-media) {
+        flex-direction: column;
+      }
+      .prodImgSlider {
+        width: 392px;
+        height: 392px;
+        @media (max-width: $xl-media) {
+          width: 313px;
+          height: 313px;
+        }
+        @media (max-width: $lg-media) {
+          width: 392px;
+          height: 392px;
+        }
+        @media (max-width: $md-media) {
+          flex: 1;
+          width: 100%;
+          height: 100%;
+          // margin: 0px auto;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .prodDetails {
+        position: relative;
+        .tilte {
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 36px;
+          text-transform: capitalize;
+        }
+        .smallTitle {
+          font-size: 18px;
+          margin-bottom: 16px;
+        }
+        .features {
+          font-size: 14px;
+          color: $gray-4A;
+          font-weight: 600;
+          margin-top: 8px;
+          margin-bottom: 8px;
+        }
+        hr {
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+          border: 0;
+          border-top: 1px solid rgba(0,0,0,.1);
+        }
+        .desc {
+          font-size: 22px;
+          font-weight: 400;
+          line-height: 36px;
+          margin-bottom: 16px;
+          text-transform: capitalize;
+        }
+        .qty {
+          background-color: $gray-4A;
+          color: $white;
+          padding: 4px 25px;
+          width: fit-content;
+          @include borderRadius(4px);
+          margin-bottom: 16px;
+        }
+        .price {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 16px;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          .after {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            span {
+              font-size: 18px;
+              font-weight: 300;
+              line-height: 27px;
+              &:last-child {
+                font-weight: 600;
+                color: $primary;
+              }
+            }
+            .prodPrice {
+              color: $primary;
+              font-weight: 600;
+            }
+          }
+          .before {
+            p {
+              display: flex;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 4px;
+              color: $danger;
+              span {
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 27px;
+              }
+              .value {
+                text-decoration: line-through;
+                color: $danger;
+              }
+              .currency {
+                font-weight: 600;
+                color: $danger;
+              }
+              .discount {
+                color: $gray-700;
+                color: $danger;
+              }
+            }
+          }
+        }
+        .setQty {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          margin-top: 16px;
+          margin-bottom: 16px;
+          button,
+          div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            background-color: $gray-EAE6E1;
+            border: 1px solid $gray-EAE6E1;
+            @include borderRadius(4px);
+          }
+          div {
+            font-weight: 700;
+            font-size: 24px;
+            color: $primary;
+            padding: 8px 24px;
+          }
+          button {
+            padding: 8px 10px;
+            cursor: pointer;
+            @include transition(0.2s);
+            svg {
+              font-size: 22px;
+              color: $gray-700;
+              @include transition(0.2s);
+            }
+            &:hover {
+              background-color: $primary;
+              border-color: $primary;
+              svg {
+                color: $white;
+              }
+            }
+            &:disabled {
+              cursor: not-allowed;
+              background-color: $gray-100;
+              &:hover {
+                border-color: transparent;
+                svg {
+                  color: $gray-700;
+                }
+              }
+            }
+          }
+        }
+        .totalPrice {
+          padding-top: 8px;
+          padding-bottom: 8px;
+          .text {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            span {
+              font-size: 18px;
+              font-weight: 300;
+              line-height: 27px;
+              &:nth-child(2) {
+                font-weight: 700;
+                color: $primary;
+              }
+            }
+          }
+          .tax {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 27px;
+          }
+        }
+        .addBtns {
+          margin-top: 16px;
+          margin-bottom: 16px;
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          .addToCart {
+            padding: 16px 32px;
+            background-color: $primary;
+            color: $white;
+            font-size: 18px;
+            @include borderRadius(4px);
+            @include transition(0.2s);
+            &:hover {
+              background-color: $success;
+            }
+          }
+          .addToFav {
+            svg {
+              @include transition(0.2s);
+              color: $primary;
+              font-size: 28px;
+            }
+            &:hover {
+              svg {
+                color: $danger;
+                fill: $danger;
+              }
+            }
+          }
+          .isFavorited {
+            svg {
+              @include transition(0.2s);
+              font-size: 28px;
+              color: $danger;
+              fill: $danger;
+            }
+            &:hover {
+              svg {
+                color: $primary;
+                fill: $white;
+              }
+            }
+          }
+        }
+      }
+      .authModule {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        right: 0;
+        z-index: 100000;
+        border: 1px solid $gray-100;
+        padding: 20px;
+        width: 100%;
+        height: 100%;
+        background-color: $gray-100;
+        display: none;
+        &__wrapper {
+          background-color: $white;
+          box-shadow: $shadow-14;
+          min-width: 50vw;
+          min-height: 50vh;
+          border: 1px solid $gray-100;
+          @include borderRadius(8px);
+        }
+      }
+    }
+    .productTabs {
+      &__head {
+        // min-height: 56px;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        border-bottom: 2px solid $gray-700;
+        .tab,
+        .tabActive {
+          padding: 16px 24px;
+          @include borderRadius(4px 4px 0px 0px);
+          cursor: pointer;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: normal;
+          background-color: $gray-700;
+          color: $white;
+          &:hover {
+          }
+          @media (max-width: $sm-media) {
+            padding: 8px 16px;
+          }
+          @media (max-width: $xs-media) {
+            padding: 8px;
+          }
+        }
+        .tabActive {
+          background-color: $primary;
+          color: $white;
+        }
+      }
+      &__body {
+        @include borderRadius(0px 0px 2px 2px);
+        border-right: 1px solid $gray-100;
+        border-bottom: 1px solid $gray-100;
+        border-left: 1px solid $gray-100;
+        padding: 16px;
+      }
+    }
+  }
+}

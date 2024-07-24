@@ -1,0 +1,40 @@
+.navDots {
+  position: fixed;
+  right: 50px;
+  top: 300px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .dot,
+  .dotActive {
+    width: 9px;
+    height: 9px;
+    @include borderRadius(50%);
+    background-color: $white;
+    position: relative;
+    cursor: pointer;
+    &:not(:last-of-type) {
+      margin-bottom: 65px;
+      &::after {
+        content: "";
+        border-left: dashed 1px #f3f0ed;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 2px;
+        width: 1px;
+        margin: auto;
+        height: 65px;
+        z-index: -1;
+      }
+    }
+  }
+  .dotActive {
+    width: 24px;
+    height: 24px;
+    background-color: $primary;
+    border: 2px solid $gray-700;
+    outline: 2px solid $primary;
+  }
+}

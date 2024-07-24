@@ -1,0 +1,30 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.addNewItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  width: fit-content;
+  background-color: $gray-100;
+  padding: 16px 32px;
+  cursor: pointer;
+  @include transition(0.2s);
+  @include borderRadius(4px);
+  svg {
+    @include transition(0.2s);
+    font-size: 42px;
+    color: $primary;
+  }
+  .addTitle {
+    color: $gray-700;
+  }
+  &:hover {
+    background-color: $gray-200;
+    svg {
+      @include transform(scale(1.3));
+    }
+  }
+}

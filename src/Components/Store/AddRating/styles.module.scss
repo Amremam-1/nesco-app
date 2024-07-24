@@ -1,0 +1,16 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.ratingBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  svg {
+    font-size: 22px;
+  }
+  .hoveredTxt {
+    font-size: 14px;
+    font-weight: 600;
+    color: $yellow;
+  }
+}

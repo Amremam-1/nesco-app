@@ -1,0 +1,41 @@
+import { useTranslation } from "react-i18next";
+import DeliveryAddress from "./DeliveryAddress/DeliveryAddress";
+import Payment from "./Payment/Payment";
+import styles from "./styles.module.scss";
+import Stepper from "./Stepper/Stepper";
+import { useState } from "react";
+import Summary from "./Summary/Summary";
+
+const Checkout = () => {
+  const { t, i18n } = useTranslation();
+
+  const steps = [t("checkout-stepper-steps1"), t("checkout-stepper-steps2"), t("checkout-stepper-steps3")];
+  const [currentStep, setCurrentStep] = useState(1);
+  const [complete, setComplete] = useState(false);
+
+  const stepProgressHandler = (isSuccess) => {
+    if (currentStep === steps.length || isSuccess) {
+      setComplete(true);
+    } else {
+      setCurrentStep((prev) => prev + 1);
+    }
+  };
+
+  return (
+    <section className={styles.checkout}>
+      <div className={styles.checkout__container}>
+        <Stepper 
+          steps={steps}
+          currentStep={currentStep}
+          complete={complete}
+          stepProgressHandler={stepProgressHandler}
+        />
+        {currentStep === 1 && <DeliveryAddress stepProgressHandler={stepProgressHandler} />}
+        {currentStep === 2 && <Payment stepProgressHandler={stepProgressHandler} /> }
+        {currentStep === 3 && <Summary stepProgressHandler={stepProgressHandler} /> }
+      </div>
+    </section>
+  )
+}
+
+export default Checkout

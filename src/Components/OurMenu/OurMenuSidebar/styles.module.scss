@@ -1,0 +1,79 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.ourMenuSidebar {
+  flex: 1 0 20%;
+  background-color: $gray-100;
+  padding: 16px;
+  border: 1px solid $gray-100;
+  @include borderRadius(6px);
+  height: fit-content;
+  @media (max-width: $xxl-media) {
+    flex: 0 0 20%;
+  }
+  @media (max-width: $xl-media) {
+    flex: 1 0 20%;
+  }
+  @media (max-width: $md-media) {
+    // flex: 0 0 20%;
+    width: fit-content;
+  }
+  .mainMenuList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .mainMenuItem {
+      .mainMenuTitle {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        color: $primary;
+        @include transition(0.2s);
+        &:hover {
+          color: $primary;
+        }
+        span {
+          width: 20px;
+          height: 20px;
+          background-color: $primary;
+        }
+        .title {
+          font-size: 18px;
+          @media (max-width: $xl-media) {
+            font-size: 16px;
+          }
+        }
+      }
+      .subMenuList,
+      .subMenuListHidden {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding-inline-start: 30px;
+        @include transCustom(all 0.5s cubic-bezier(0,1,0,1));
+        // @include transition(0.4s);
+        height: auto;
+        max-height: 9999px;
+        .subMenuItem {
+          cursor: pointer;
+          color: $gray-700;
+          @include transition(0.2s);
+          &:first-of-type {
+            margin-top: 10px;
+          }
+          &:hover {
+            color: $primary;
+          }
+          .subMenuTitle {
+
+          }
+        }
+      }
+      .subMenuListHidden {
+        max-height: 0;
+        overflow: hidden;
+      }
+    }
+  }
+}

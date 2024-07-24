@@ -1,0 +1,93 @@
+@import "../../../index.scss";
+@import "../../../sass/mixins";
+
+.main {
+  // background-color: #1d1d19;
+  .subscribe {
+    position: relative;
+    padding: 75px 0px;
+    margin: auto;
+    background-color: transparent;
+    width: 88%;
+    // border-bottom: 3px solid $gray-700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    @media (max-width: $xl-media) {
+      flex-direction: column;
+      gap: 20px;
+      align-items: start;
+      justify-content: flex-start;
+    }
+    @media (max-width: $sm-media) {
+      justify-content: center;
+      align-items: center;
+    }
+    &__ask {
+      flex: 4;
+      @media (max-width: $xl-media) {
+        flex: 1;
+      }
+      .text {
+        color: $gray-4D;
+        font-size: 20px;
+        line-height: 23px;
+        text-align: left;
+      }
+    }
+    &__form {
+      flex: 8;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      input {
+        flex: 6;
+        height: 68px;
+        border: 1px solid $gray-4A;
+        outline: none;
+        color: #7c7c7c;
+        font-size: 18px;
+        line-height: 22px;
+        padding: 0px 16px;
+        @include borderRadius(4px);
+        @include transition(0.2s);
+        &:hover {
+          border-color: $primary;
+        }
+      }
+      .subscribeBtn {
+        flex: 4;
+        height: 68px;
+        border: 1px solid $gray-700;
+        background-color: $gray-700;
+        color: $white;
+        font-size: 20px;
+        line-height: 24px;
+        padding: 0px 16px;
+        text-transform: capitalize;
+        @include borderRadius(4px);
+        @include transition(0.2s);
+        &:hover {
+          border-color: $primary;
+          background-color: $primary;
+        }
+      }
+      @media (max-width: $xl-media) {
+        width: 100%;
+        flex: 1;
+      }
+      @media (max-width: $sm-media) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        input,
+        .subscribeBtn {
+          flex: 1;
+          width: 100%;
+          padding: 16px;
+        }
+      }
+    }
+  }
+}

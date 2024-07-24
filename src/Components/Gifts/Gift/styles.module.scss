@@ -1,0 +1,197 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+
+
+.gift {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  @media (max-width: $sm-media) {
+    margin-top: 190px;
+  }
+  .container {
+    width: 90%;
+    margin: 0px auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .wrapper {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 350px;
+    margin: 0px auto;
+    @media (max-width: $xs-media) {
+      max-width: 320px;
+    }
+    .giftContent {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .pathLink {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #00000094;
+        font-size: 18px;
+        a {
+          @include transition(0.2s);
+          &:hover {
+            color: $primary;
+          }
+        }
+        span {
+          font-weight: 600;
+        }
+      }
+      .mainTitle {
+        color: $gray-700;
+        font-size: 28px;
+      }
+      .image {
+        width: 350px;
+        height: 220px;
+        @include borderRadius(10px);
+        overflow: hidden;
+        @media (max-width: $xs-media) {
+          width: 320px;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .note {
+        color: #00000094;
+      }
+      .giftForm {
+        .inpBox {
+          margin-bottom: 48px;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          .top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            // padding-inline-end: 16px;
+            .text {
+              font-size: 16px;
+              font-weight: 600;
+              color: $gray-400;
+            }
+            svg {
+              width: 50px;
+              font-size: 20px;
+              color: $gray-400;
+              cursor: pointer;
+              @include transition(0.2s);
+              &:hover {
+                color: $danger;
+              }
+            }
+          }
+          .label {
+            font-size: 24px;
+            font-weight: 600;
+            color: $gray-500;
+            padding: 0px 8px 12px;
+            border-bottom: 4px solid $primary;
+            letter-spacing: 0.8px;
+            margin-bottom: 16px;
+          }
+        }
+        .btnBox {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          margin-bottom: 32px;
+          .title {
+            font-size: 18px;
+            font-weight: 600;
+            color: $gray-500;
+            letter-spacing: 0.8px;
+            margin-bottom: 16px;
+          }
+          .add {
+            padding: 4px 16px;
+            background-color: $gray-700;
+            border: 1px solid $gray-700;
+            color: $white;
+            opacity: 1;
+            @include borderRadius(4px);
+            @include transition(0.2s);
+            &:hover {
+              opacity: 0.7;
+            }
+            &:disabled {
+              cursor: not-allowed;
+              background-color: $gray-300;
+              border-color: $gray-300;
+            }
+          }
+        }
+        .submit {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 60px;
+          button {
+            display: block;
+            padding: 8px 16px;
+            border: 1px solid $primary;
+            background-color: $primary;
+            color: $white;
+            font-size: 18px;
+            font-weight: 600;
+            opacity: 1;
+            @include borderRadius(8px);
+            @include transition(0.2s);
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+  }
+  .giftSupport {
+    background-color: $gray-edebe9;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .text {
+        font-size: 18px;
+        color: $gray-500;
+        text-align: center;
+      }
+      .links {
+        margin-top: 32px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+        .link {
+          border: 1px solid $gray-700;
+          padding: 8px 16px;
+          @include borderRadius(40px);
+          @include transition(0.3s);
+          display: block;
+          font-weight: 600;
+          color: $gray-700;
+          &:hover {
+            background-color: $gray-700;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

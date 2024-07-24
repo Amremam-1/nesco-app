@@ -1,0 +1,52 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.sideBarMenuBtn,
+.sideBarMenuBtnLtr {
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  // left: 0;
+  // margin-left: -28px;
+  margin-inline-end: -28px;
+  @include transition(0.3s);
+  display: none;
+  @media (max-width: $lg-media) {
+    display: inline-block;
+  }
+  button {
+    width: 60px;
+    height: 60px;
+    // @include borderRadius(50%);
+    position: relative;
+    z-index: 1;
+    svg {
+      // margin-right: 28px;
+      margin-inline-start: 28px;
+      margin-top: 5px;
+      font-size: 22px;
+      color: $white;
+      // color: $gray-700;
+    }
+    &::before {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $primary;
+      @include transform(rotate(45deg));
+      @include borderRadius(10px);
+    }
+  }
+}
+
+.sideBarMenuBtn {
+  left: 0;
+}
+
+.sideBarMenuBtnLtr {
+  right: 0;
+}

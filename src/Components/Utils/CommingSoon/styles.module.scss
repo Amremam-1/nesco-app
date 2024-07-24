@@ -1,0 +1,54 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.commingSoon {
+  padding: 50px;
+  width: 70%;
+  margin: 0px auto;
+  text-align: center;
+  @media (max-width: $lg-media) {
+    width: 90%;
+  }
+  @media (max-width: $md-media) {
+    width: 100%;
+  }
+  @media (max-width: $sm-media) {
+    margin-top: 150px;
+  }
+  &__container {
+    .title {
+      color: $primary;
+      font-size: 48px;
+      font-weight: bold;
+      line-height: 50px;
+      text-align: center;
+      position: relative;
+      margin: auto;
+      margin-bottom: 40px;
+    }
+    .desc {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 4px;
+      text-align: center;
+      margin: 0px auto;
+      color: $gray-700;
+      font-size: 22px;
+      .custText {
+        // text-decoration: underline;
+        color: $yellow;
+      }
+      .franchiseFormLink {
+        color: $primary;
+        text-decoration: underline;
+        font-weight: 500;
+        @include transition(0.2s);
+        &:hover {
+          color: $gray-700;
+        }
+      }
+    }
+  }
+}

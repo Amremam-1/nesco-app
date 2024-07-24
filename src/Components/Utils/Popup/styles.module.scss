@@ -1,0 +1,95 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.popup,
+.popupSuccess,
+.popupError,
+.popupWarning {
+  z-index: 100000;
+  padding: 0px 10px 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+  box-shadow: $shadow-16;
+  background-color: $gray-700;
+  @include borderRadius(4px);
+  width: 100%;
+  width: max-content;
+  min-width: 300px;
+  max-width: 60%;
+  @media (max-width: $lg-media) {
+    max-width: 70%;
+  }
+  @media (max-width: $md-media) {
+    max-width: 80%;
+  }
+  @media (max-width: $sm-media) {
+    max-width: 90%;
+  }
+  @media (max-width: $xs-media) {
+    max-width: 90%;
+  }
+  &__container {
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      background-color: $gray-700;
+      // border: 1px solid $primary;
+      .closeBtn {
+        width: 26px;
+        height: 26px;
+        // border: 1px solid $primary;
+        background-color: $gray-700;
+        @include borderRadius(50%);
+        margin-top: 4px;
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        svg {
+          @include transition(0.2s);
+          font-size: 24px;
+          color: $white;
+        }
+        &:hover {
+          svg {
+            color: $primary
+          }
+        }
+      }
+    }
+    .body {
+      // background-color: $white;
+      @include borderRadius(4px);
+      padding: 16px;
+      .msg {
+        color: $white;
+        line-height: 1.7;
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+.popupSuccess {
+  .body {
+    background-color: $success;
+  }
+}
+
+.popupError {
+  .body {
+    background-color: $danger;
+  }
+}
+
+.popupWarning {
+  .body {
+    background-color: $yellow;
+  }
+}

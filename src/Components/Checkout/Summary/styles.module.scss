@@ -1,0 +1,112 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.summary {
+  margin-top: 60px;
+  &__container {
+  
+    .orderSummary {
+      flex: 1 0 48%;
+      @media (max-width: $lg-media) {
+        flex: 1 0 100%;
+      }
+      .titleSm {
+        color: $primary;
+        font-size: 18px;
+        margin-bottom: 16px;
+        width: 100%;
+        text-align: center;
+      }
+      &__wrapper {
+        border: 1px solid $gray-c2c8cc;
+        @include borderRadius(6px);
+        overflow: hidden;
+        width: 70%;
+        margin: 0px auto;
+        @media (max-width: $lg-media) {
+          width: 80%;
+        }
+        @media (max-width: $md-media) {
+          width: 100%;
+        }
+        .priceSummary {
+          background: $gray-f1;
+          padding: 24px 0px 0px;
+          .payTitle {
+            padding: 0px 16px;
+            p {
+              color: $primary;
+              font-weight: 400;
+              font-size: 18px;
+              margin-bottom: 8px;
+            }
+            @media (max-width: $sm-media) {
+              text-align: center;
+            }
+          }
+          .subTotal,
+          .total {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding-inline-end: 16px;
+            @media (max-width: $xs-media) {
+              flex-direction: column;
+              justify-content: center;
+              gap: 8px;
+            }
+            .text {
+              color: $gray-233746;
+              font-size: 18px;
+              font-weight: 400;
+            }
+            .textBold {
+              color: $primary;
+              font-size: 18px;
+              font-weight: 700;
+            }
+          }
+          .subTotal {
+            padding: 6px 16px;
+            background: $gray-d8;
+            border-bottom: 7px solid $gray-f1;
+          }
+          .total {
+            padding: 16px;
+            background-color: $gray-9cc6b6;
+            .text {
+              font-size: 20px;
+              font-weight: 600;
+            }
+            .textBold {
+              font-size: 22px;
+              color: $gray-700;
+            }
+          }
+        }
+      }
+    }
+    .goOrdrs {
+      margin-top: 32px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .goOrdrsBtn {
+        font-size: 18px;
+        font-weight: 600;
+        color: $white;
+        background-color: $primary;
+        border: 1px solid $primary;
+        padding: 8px 16px;
+        @include borderRadius(4px);
+        @include transition(0.2s);
+        opacity: 1;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}

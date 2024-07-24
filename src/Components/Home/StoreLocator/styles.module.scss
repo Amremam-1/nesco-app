@@ -1,0 +1,108 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.storeLocator {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  @media (max-width: $sm-media) {
+    margin-top: 190px;
+  }
+  &__container {
+    width: 90%;
+    margin: 0px auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .locatorForm {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // flex-wrap: wrap;
+      gap: 16px;
+      @media (max-width: $sm-media) {
+        flex-direction: column;
+      }
+      .label {
+        color: $gray-700;
+        font-size: 18px;
+      }
+      .selectCountry,
+      .selectCity {
+        height: 48px;
+        border: 1px solid $gray-200;
+        outline: none;
+        @include borderRadius(4px);
+        padding: 4px 8px;
+        color: $gray-700;
+        font-size: 18px;
+        @media (max-width: $sm-media) {
+          width: 100%;
+        }
+        option {
+          padding: 4px 8px;
+          color: $primary;
+        }
+      }
+      .customSelect {
+        height: 48px;
+        width: 150px;
+        div {
+          padding: 2px;
+        }
+      }
+
+
+      .searchBtn {
+        border: 1px solid $primary;
+        background-color: $primary;
+        color: $white;
+        padding: 6px 32px;
+        font-size: 18px;
+        @include borderRadius(4px);
+        @include transition(0.2s);
+        &:hover {
+          box-shadow: $shadow-15;
+        }
+      }
+    }
+
+    .filteredLocations {
+      margin-top: 40px;
+      display: flex;
+      align-items: flex-start;
+      // justify-content: center;
+      gap: 16px;
+      @media (max-width: $lg-media) {
+        flex-direction: column-reverse;
+        gap: 32px;
+      }
+      .list {
+        flex: 0 0 40%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 16px;
+        @media (max-width: $lg-media) {
+          flex: 0 0 100%;
+          width: 100%;
+        }
+      }
+      .googleMap {
+        min-width: 300px;
+        min-height: 450px;
+        flex: 0 0 58%;
+        border: 1px solid $gray-200;
+        @include borderRadius(4px);
+        overflow: hidden;
+        @media (max-width: $lg-media) {
+          flex: 0 0 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

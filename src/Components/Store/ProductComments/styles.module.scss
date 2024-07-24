@@ -1,0 +1,54 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.prodComments {
+  display: flex;
+  gap: 32px;
+  @media (max-width: $xl-media) {
+    flex-direction: column;
+  }
+  &__commContainer {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .sortComments {
+    border: 1px solid $gray-100;
+    @include borderRadius(4px);
+    padding: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    .title {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      color: $gray-600;
+    }
+  }
+  .commentsWrapper {
+    & > div {
+      &:not(:last-child) {
+        border-bottom: 1px solid $gray-100;
+      }
+    }
+  }
+  .showMoreCommBtn {
+    border: 1px solid $gray-100;
+    @include borderRadius(4px);
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: $gray-600;
+    @include transition(0.2s);
+    &:hover {
+      border-color: $primary;
+      background-color: $primary;
+      color: $white;
+    }
+  }
+}

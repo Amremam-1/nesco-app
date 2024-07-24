@@ -1,0 +1,109 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+
+.registerPage,
+.inputBoxLogin {
+  padding: 64px;
+  @media (max-width: $sm-media) {
+    margin-top: 100px;
+    padding: 64px 32px;
+  }
+  &__wrapper {
+    // width: 500px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    @media (max-width: $xl-media) {
+      width: 70%;
+    }
+    @media (max-width: $lg-media) {
+      width: 90%;
+    }
+    @media (max-width: $md-media) {
+      width: 100%;
+    }
+    .logoContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .title {
+      color: $primary;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 36px;
+    }
+    .registerForm {
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      width: 100%;
+      .bottomWrapper {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .terms,
+        .hearOurNews {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          input {
+            width: 20px;
+            height: 20px;
+            border: 1px solid $primary;
+            outline: none;
+            @include borderRadius(4px);
+            color: #00784B;
+            font-size: 18px;
+            font-weight: 500;
+            &:focus,
+            &:hover {
+              box-shadow: $shadow-15;
+            }
+          }
+          label {
+            a {
+              text-decoration: underline;
+              color: $primary;
+            }
+          }
+        }
+        .registerBtn {
+          display: block;
+          font-size: 18px;
+          border: 1px solid;
+          @include borderRadius(4px);
+          padding: 8px 32px;
+          @include transition(0.2s);
+          border-color: $primary;
+          background-color: $primary;
+          color: $white;
+          width: fit-content;
+          &:hover {
+            box-shadow: $shadow-15;
+          }
+        }
+      }
+    }
+  }
+  
+}
+
+.inputBoxLogin {
+  flex: 0 0 100%;
+  .input,
+  .inputEmpty {
+    width: 50%;
+    @media (max-width: $md-media) {
+      width: 80%;
+    }
+    @media (max-width: $sm-media) {
+      width: 100%;
+    }
+  }
+}

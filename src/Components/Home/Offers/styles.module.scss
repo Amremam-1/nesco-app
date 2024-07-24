@@ -1,0 +1,86 @@
+@import "../../../index.scss";
+@import "../../../sass/mixins";
+
+.offers {
+  // scroll-margin-top: 100px;
+  color: $white;
+  &__container {
+    display: flex;
+    @media (max-width: $md-media) {
+      flex-direction: column;
+    }
+    .left {
+      width: 50%;
+      background-color: #1d1d19;
+    }
+    .right {
+      background-image: url("../../../../public/images/foot.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 50%;
+    }
+    .left {
+      padding: 40px 54px;
+      display: flex;
+      flex-direction: column;
+
+      gap: 30px;
+      @media (max-width: $xl-media) {
+        padding: 70px 30px;
+      }
+      @media (max-width: $sm-media) {
+        padding: 70px 40px;
+      }
+      @media (max-width: $lg-media) {
+        flex-direction: column;
+        align-items: start;
+      }
+      .title {
+        // flex: 1;
+        h1 {
+          font-size: 30px;
+          font-weight: bold;
+          position: relative;
+          font-family: $bebasbeua-font;
+        }
+      }
+      .desc {
+        // flex: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 20px;
+        // text-align: justify;
+        // text-align-last: center;
+        .text {
+          font-size: 16px;
+          // line-height: 27px;
+          width: 90%;
+          @media (max-width: $md-media) {
+            width: 100%;
+          }
+        }
+        .reqNowBtn {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: $white;
+          opacity: 1;
+          @include transition(0.2s);
+          &:hover {
+            opacity: 0.8;
+          }
+          span {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 27px;
+          }
+          svg {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}

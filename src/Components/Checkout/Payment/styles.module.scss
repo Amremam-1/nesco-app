@@ -1,0 +1,400 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.checkoutPayment {
+  margin-top: 60px;
+  &__container {
+  
+
+    .checkoutProgress {
+      margin-bottom: 64px;
+      @media(max-width: $sm-media) {
+        display: none;
+      }
+      .progList,
+      .progListAr {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .progStep {
+          position: relative;
+          display: inline-block;
+          padding-bottom: 20px;
+          text-align: start;
+          &:not(:last-child) {
+            width: 33.3%;
+            @media(max-width: $md-media) {
+              width: 25%;
+            }
+            &::before {
+              content: '';
+              width: 100%;
+              height: 2px;
+              position: absolute;
+              background-color: #C8C8C8;
+              left: 50px;
+              bottom: 0px;
+              z-index: 1;
+            }
+          }
+          &::after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            background-color: #C8C8C8;
+            left: 40px;
+            bottom: -5px;
+            z-index: 1;
+            @include borderRadius(50%);
+          }
+          &.progStepActive {
+            &::before {
+              background-color: $primary;
+            }
+            &::after {
+              background-color: $primary;
+            }
+            .progLink {
+              font-weight: 700;
+            }
+          }
+          .progLink {
+            font-size: 18px;
+            color: $gray-700;
+            padding-inline-start: 13px;
+            @media(max-width: $md-media) {
+              font-size: 16px;
+            }
+          }
+          &:first-child {
+            .progLink {
+              margin-inline-start: -20px;
+              padding-inline-start: 0px;
+              @media(max-width: $md-media) {
+                margin-inline-start: -40px;
+              }
+              @media(max-width: $sm-media) {
+                margin-inline-start: -50px;
+              }
+            }
+          }
+        }
+      }
+      .progListAr {
+        .progStep {
+          text-align: start;
+          &:not(:last-child) {
+            &::before {
+              content: '';
+              right: 50px;
+            }
+          }
+          &::after {
+            content: '';
+            right: 40px;
+          }
+        }
+      }
+    }
+    .backTo {
+      margin-bottom: 32px;
+      a {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: $gray-700;
+        @include transition(0.2s);
+        &:hover {
+          color: $primary;
+        }
+        span {
+          display: block;
+          font-size: 18px;
+        }
+        svg {
+        }
+      }
+    }
+
+    .choosePaymentMethod {
+      display: flex;
+      gap: 16px;
+      @media (max-width: $lg-media) {
+        flex-direction: column;
+        gap: 32px;
+      }
+      .payMethod {
+        flex: 0 0 48%;
+        @media (max-width: $lg-media) {
+          flex: 1 0 100%;
+        }
+        .paymentProvider {
+          .secTitle {
+            color: $primary;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+          }
+          .selectCard {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-bottom: 16px;
+            .card,
+            .cash {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              label {
+                color: $gray-700;
+                font-weight: 400;
+              }
+              input {
+                width: 14px;
+                height: 14px;
+                @include borderRadius(50%);
+                outline: 2px solid $primary;
+                border: 2px solid $white;
+                -webkit-appearance: none;
+                appearance: none;
+                cursor: pointer;
+                &:checked {
+                  background-color: $gray-700;
+                }
+              }
+            }
+            .cash {
+              cursor: not-allowed;
+              label {
+                color: $gray-200;
+                cursor: not-allowed;
+              }
+              input {
+                cursor: not-allowed;
+                outline-color: $gray-200;
+                &:disabled {
+                  color: $gray-100;
+                }
+              }
+            }
+          }
+          .cardImgs {
+            margin-bottom: 16px;
+          }
+          .payGateway {
+            margin-top: 32px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            @media (max-width: $sm-media) {
+              flex-direction: column;
+              justify-content: center;
+              text-align: center;
+            }
+            svg {
+              font-size: 22px;
+              fill: $gray-700;
+            }
+            .pTitle {
+              font-size: 20px;
+              font-weight: 600;
+              color: $gray-700;
+            }
+          }
+          
+        }
+
+      }
+      .orderSummary {
+        flex: 1 0 48%;
+        @media (max-width: $lg-media) {
+          flex: 1 0 100%;
+        }
+        .titleSm {
+          color: $primary;
+          font-size: 18px;
+          margin-bottom: 16px;
+        }
+        &__wrapper {
+          border: 1px solid $gray-c2c8cc;
+          @include borderRadius(6px);
+          overflow: hidden;
+          padding: 14px 0px 0px;
+          .orderSummList {
+            padding: 0px 16px;
+          }
+          .deliveryInfo {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            border-top: 1px solid $gray-c2c8cc;
+            border-bottom: 1px solid $gray-c2c8cc;
+            background: $gray-f1;
+            padding: 24px 16px;
+            .delivAdd {
+              display: flex;
+              justify-content: space-between;
+              @media (max-width: $md-media) {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+              }
+              .address {
+                flex: 2;
+                padding-inline-end: 16px;
+                @media (max-width: $md-media) {
+                  text-align: center;
+                  padding-bottom: 16px;
+                  margin-bottom: 16px;
+                  border-bottom: 1px solid $gray-929ca3;
+                }
+                .editAddress {
+                  display: flex;
+                  align-items: center;
+                  gap: 16px;
+                  margin-bottom: 16px;
+                  p {
+                    color: $primary;
+                    font-weight: 400;
+                    font-size: 18px;
+                  }
+                  svg {
+                    color: $gray-700;
+                    fill: $gray-700;
+                    font-size: 24px;
+                  }
+                }
+                .selectedAddress {
+                  p {
+                    color: $gray-700;
+                    font-size: 18px;
+                  }
+                }
+              }
+              .notes {
+                flex: 3;
+                padding-inline-start: 16px;
+                border-inline-start: 1px solid $gray-929ca3;
+                @media (max-width: $md-media) {
+                  border-inline-start: none;
+                  text-align: center;
+                }
+                .noteTtl {
+                  font-weight: bold;
+                  color: $gray-700;
+                  margin-bottom: 8px;
+                }
+                .noteInfo {
+                  color: $info;
+                  // color: $gray-700;
+                  font-size: 18px;
+                  font-weight: 400;
+                }
+              }
+            }
+            .delivTime {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 8px;
+              color: $gray-233746;
+              font-size: 18px;
+              .text {
+                font-weight: 300;
+              }
+              .textBold {
+                font-weight: 700;
+              }
+            }
+          }
+          .priceSummary {
+            background: $gray-f1;
+            padding: 24px 0px 0px;
+            .payTitle {
+              padding: 0px 16px;
+              p {
+                color: $primary;
+                font-weight: 400;
+                font-size: 18px;
+                margin-bottom: 8px;
+              }
+              @media (max-width: $sm-media) {
+                text-align: center;
+              }
+            }
+            .subTotal,
+            .total {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 16px;
+              padding-inline-end: 16px;
+              @media (max-width: $sm-media) {
+                flex-direction: column;
+                justify-content: center;
+                gap: 8px;
+              }
+              .text {
+                color: $gray-233746;
+                font-size: 18px;
+                font-weight: 400;
+              }
+              .textBold {
+                color: $primary;
+                font-size: 18px;
+                font-weight: 700;
+              }
+            }
+            .subTotal {
+              padding: 6px 16px;
+              background: $gray-d8;
+              border-bottom: 7px solid $gray-f1;
+            }
+            .total {
+              padding: 16px;
+              background-color: $gray-9cc6b6;
+              .text {
+                font-size: 20px;
+                font-weight: 600;
+              }
+              .textBold {
+                font-size: 22px;
+                color: $gray-700;
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    
+    .proceedBtn {
+      margin-top: 32px;
+      padding: 10px 20px;
+      width: fit-content;
+      font-size: 18px;
+      font-weight: 400;
+      display: block;
+      border: 1px solid $primary;
+      background-color: $primary;
+      color: $white;
+      opacity: 1;
+      &:hover {
+        opacity: 0.7;
+      }
+      @include borderRadius(4px);
+      @include transition(0.3s);
+  
+      @media (max-width: $md-media) {
+        // width: 70%;
+        // flex: 1 0 100%;
+      }
+      @media (max-width: $sm-media) {
+        // width: 90%;
+      }
+    }
+  }
+}

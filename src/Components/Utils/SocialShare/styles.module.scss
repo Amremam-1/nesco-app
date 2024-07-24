@@ -1,0 +1,51 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.socials,
+.socialsVisible {
+  margin-top: 10px;
+  display: none;
+  .socialList {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    .item {
+      width: 36px;
+      height: 36px;
+      border: 1px solid $gray-200;
+      @include borderRadius(50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 6px;
+      opacity: 1;
+      @include transition(0.2s);
+      &:hover {
+        opacity: 0.7;
+      }
+      svg {
+        font-size: 22px;
+        color: $white;
+      }
+    }
+    .facebook {
+      background-color: #316FF6;
+      border-color: #316FF6;
+    }
+    .twitter {
+      background-color: #1DA1F2;
+      border-color: #1DA1F2;
+    }
+    .instagram {
+      background-color: #833AB4;
+      border-color: #833AB4;
+    }
+    .pinterest {
+      background-color: #E60023;
+      border-color: #E60023;
+    }
+  }
+}
+.socialsVisible {
+  display: flex;
+}

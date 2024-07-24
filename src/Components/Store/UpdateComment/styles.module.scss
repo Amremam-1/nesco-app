@@ -1,0 +1,45 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+
+.updateForm {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  textarea {
+    margin-bottom: 8px;
+    border: 1px solid $gray-100;
+    @include borderRadius(4px);
+    padding: 14px 16px;
+    outline: none;
+    @include transition(0.2s);
+    &:focus {
+      border-color: $primary;
+    }
+    &::placeholder {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 17px;
+      color: $gray-300;
+    }
+  }
+  .shareCommentBtn {
+    border: 1px solid $primary;
+    @include borderRadius(4px);
+    background-color: $gray-700;
+    padding: 8px 16px;
+    color: $white;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    text-transform: capitalize;
+    width: fit-content;
+    opacity: 1;
+    @include transition(0.2s);
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

@@ -1,0 +1,125 @@
+@import '../../../index.scss';
+@import '../../../sass/mixins';
+
+.newsTab {
+  &__wrapper {
+    display: flex;
+    height: 510px;
+    @media (max-width: $lg-media) {
+      flex-direction: column;
+      height: 100%;
+    }
+    .right {
+      flex: 0 0 50%;
+      @media (max-width: $lg-media) {
+        flex: 0 0 100%;
+      }
+      .image {
+        height: 512px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .left {
+      flex: 0 0 50%;
+      display: flex;
+      flex-direction: column;
+      @media (max-width: $lg-media) {
+        flex: 0 0 100%;
+      }
+      .image {
+        // flex: 0 0 50%;
+        height: 256px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .image {
+      overflow: hidden;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.3);
+        z-index: 100;
+      }
+      .imgText {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        z-index: 999;
+        color: $white;
+        width: 80%;
+        @media (max-width: $sm-media) {
+          width: 90%;
+        }
+        .date {
+          color: $gray-100;
+          // font-weight: 600;
+          margin-bottom: 10px;
+        }
+        .newsTitle {
+          font-weight: 600;
+        }
+      }
+      img {
+        @include transition(0.5s);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      &:hover {
+        img {
+          @include transform(scale(1.3) rotate(3deg));
+        }
+      }
+    }
+  }
+  .allNews {
+    padding-top: 60px;
+    width: 90%;
+    margin: 0px auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .selectYear {
+      display: flex;
+      justify-content: flex-end;
+      select {
+        border: 1px solid $primary;
+        outline: none;
+        padding: 4px 16px;
+        @include borderRadius(4px);
+        color: $primary;
+      }
+    }
+    .allNewsList {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .showMoreBtn {
+      margin-top: 32px;
+      display: flex;
+      align-self: center;
+      justify-content: center;
+      button {
+        color: $primary;
+        font-weight: 600;
+      }
+    }
+  }
+}

@@ -66,7 +66,11 @@ const About = () => {
           className={`scrollSection lazyload  ${styles.elementor_section}`}
         >
           <div className={styles.elementor_section_top}></div>
-          <div className={styles.image_tree}>
+          <div
+            className={
+              i18n.language === "en" ? styles.image_tree : styles.image_tree_ar
+            }
+          >
             <img src="/images/coffeeTree.png" alt="" />
           </div>
 
@@ -83,8 +87,18 @@ const About = () => {
                   </h2>
                 </div>
 
-                <div className={styles.text_image}>
-                  <img src={"/images/coffee-bg.png"} alt="coffee" />
+                <div
+                  className={
+                    i18n.language === "en"
+                      ? styles.text_image
+                      : styles.text_image_ar
+                  }
+                >
+                  {i18n.language === "en" ? (
+                    <img src={"/images/make_coffee.png"} alt="coffee" />
+                  ) : (
+                    <img src={"/images/coffee-bg.png"} alt="coffee" />
+                  )}
                 </div>
               </div>
 

@@ -86,7 +86,8 @@
       .logo {
         width: 100px;
         position: absolute;
-        left: -15px;
+        left: -17px;
+        right: -17px;
         top: 0;
         @media (max-width: $sm-media) {
           width: 80px;

@@ -4,6 +4,7 @@ import Aos from "aos"
 import "aos/dist/aos.css"
 import { menuData } from "../../../utils/menuData"
 import { MdOutlineAddShoppingCart } from "react-icons/md"
+import { useTranslation } from "react-i18next"
 
 const Menu = () => {
   useEffect(() => {
@@ -12,6 +13,8 @@ const Menu = () => {
       easing: "ease-in-sine",
     })
   }, [])
+
+  const { t, i18n } = useTranslation()
 
   const renderMenuItems = (items) => {
     return items.map((item) => {
@@ -22,7 +25,9 @@ const Menu = () => {
             className={styles.special_section}
             data-aos="fade-up"
           >
-            <h4 className={styles.special_title}>{item.type}</h4>
+            <h4 className={styles.special_title}>
+              {i18n.language === "en" ? item.typeEn : item.typeAr}
+            </h4>
             <div className={styles.special_item}>
               <img
                 src={item.imgUrl}
@@ -30,8 +35,12 @@ const Menu = () => {
                 className={styles.menu_image}
               />
               <div className={styles.menu_text}>
-                <h3>{item.nameEn}</h3>
-                <p>{item.descriptionEn}</p>
+                <h3> {i18n.language === "en" ? item.nameEn : item.nameAr} </h3>
+                <p>
+                  {i18n.language === "en"
+                    ? item.descriptionEn
+                    : item.descriptionAr}
+                </p>
               </div>
               <a href="" className={styles.add_to_cart}>
                 <MdOutlineAddShoppingCart className={styles.icon} />
@@ -48,8 +57,12 @@ const Menu = () => {
               className={styles.menu_image}
             />
             <div className={styles.menu_text}>
-              <h3>{item.nameEn}</h3>
-              <p>{item.descriptionEn}</p>
+              <h3> {i18n.language === "en" ? item.nameEn : item.nameAr} </h3>
+              <p>
+                {i18n.language === "en"
+                  ? item.descriptionEn
+                  : item.descriptionAr}
+              </p>
             </div>
             <a href="" className={styles.add_to_cart}>
               <MdOutlineAddShoppingCart className={styles.icon} />
@@ -63,30 +76,44 @@ const Menu = () => {
   return (
     <section className={styles.main_wrapper}>
       <div className={styles.heading_info} data-aos="zoom-in">
-        <h2>our</h2>
-        <h1>Menu</h1>
-        <img
-          src="/images/make_coffee.png"
-          alt="make-coffee"
-          className={styles.make}
-        />
+        {i18n.language === "en" ? (
+          <>
+            <h2>{t("home-menu-titel-one")}</h2>
+            <h1>{t("home-menu-titel-two")}</h1>
+          </>
+        ) : (
+          <h1>{t("home-menu-titel")}</h1>
+        )}
+        {i18n.language === "en" ? (
+          <img
+            src="/images/make_coffee.png"
+            alt="make-coffee"
+            className={styles.make}
+          />
+        ) : (
+          <img
+            src="/images/coffee-bg.png"
+            alt="coffee-bg"
+            className={styles.make}
+          />
+        )}
       </div>
 
       <div className={styles.menu_details}>
         <div className={styles.menu_category}>
-          <h2>Hot Coffees</h2>
+          <h2>{t("home-menu-category-hot")}</h2>
           {renderMenuItems(menuData.hotCoffees)}
         </div>
         <div className={styles.menu_category}>
-          <h2>Cold Coffees</h2>
+          <h2>{t("home-menu-category-ice")}</h2>
           {renderMenuItems(menuData.coldCoffees)}
         </div>
         <div className={styles.menu_category}>
-          <h2>Bakery</h2>
+          <h2>{t("home-menu-category-bakery")}</h2>
           {renderMenuItems(menuData.Bakery)}
         </div>
         <div className={styles.menu_category}>
-          <h2>Lunch</h2>
+          <h2>{t("home-menu-category-lunch")}</h2>
           {renderMenuItems(menuData.Lunch)}
         </div>
       </div>
@@ -101,8 +128,14 @@ const Menu = () => {
       >
         <div className={styles.details_image}>
           <div className={styles.details_image_content} data-aos="zoom-in">
-            <p className={styles.image_title}>Our</p>
-            <h1>Shop</h1>
+            {i18n.language === "en" ? (
+              <>
+                <p className={styles.image_title}>Our</p>
+                <h1>Shop</h1>
+              </>
+            ) : (
+              <h1>{t("home-shop-titlemain")}</h1>
+            )}
           </div>
         </div>
 

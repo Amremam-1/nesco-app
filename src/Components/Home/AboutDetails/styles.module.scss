@@ -94,6 +94,7 @@
 
     .container_one {
       position: relative;
+      overflow: hidden;
       padding-top: 2rem;
 
       .cup {
@@ -223,6 +224,13 @@
         left: -1%;
         width: 100px;
       }
+
+      .beansAr {
+        position: absolute;
+        top: -20%;
+        right: 1%;
+        width: 100px;
+      }
       .feature_container_two {
         max-width: 1200px;
         margin-left: auto;
@@ -246,7 +254,7 @@
             width: 100%;
           }
           .title {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 400;
           }
 
@@ -280,9 +288,10 @@
             }
 
             .coffee_bg {
-              position: absolute;
-              top: 0;
-              right: 0;
+              // position: absolute;
+              // top: 0;
+              // right: 0;
+              height: 30%;
               width: 30%;
             }
           }

@@ -29,18 +29,26 @@ const AboutDetails = () => {
       >
         <div className={styles.details_image}>
           <div className={styles.details_image_content} data-aos="zoom-in">
-            <p className={styles.image_title}>Story of</p>
-            <h1>Craft Coffee</h1>
+            <p className={styles.image_title}>{t("home-aboutdetails-title")}</p>
+            <h1>{t("home-aboutdetails-subtitle")}</h1>
           </div>
         </div>
       </div>
 
       <div className={styles.features_main}>
-        <img
-          src="/images/make_coffee.png"
-          alt="about-cup"
-          className={styles.make}
-        />
+        {i18n.language === "en" ? (
+          <img
+            src="/images/make_coffee.png"
+            alt="about-cup"
+            className={styles.make}
+          />
+        ) : (
+          <img
+            src="/images/coffee-bg.png"
+            alt="about-cup"
+            className={styles.make}
+          />
+        )}
         <div className={styles.feature_img}></div>
         <span className={styles.line}></span>
 
@@ -59,16 +67,13 @@ const AboutDetails = () => {
               /> */}
             </div>
             <div className={styles.left_content} data-aos="slide-up">
-              <h1>
-                We believe that the world of coffee should be nothing short of
-                extraordinary.
-              </h1>
+              <h1>{t("home-aboutdetails-leftcontent")}</h1>
             </div>
           </div>
 
           <div className={styles.heading} data-aos="fade-right">
-            <p>beyond</p>
-            <p>imagination</p>
+            <p>{t("home-aboutdetails-heading-one")}</p>
+            <p>{t("home-aboutdetails-heading-two")}</p>
           </div>
         </div>
 
@@ -77,13 +82,12 @@ const AboutDetails = () => {
             data-aos="fade-left"
             src="/images/beans-textAr.png"
             alt="beans-text"
-            className={styles.beans}
+            className={i18n.language === "en" ? styles.beans : styles.beansAr}
           />
           <div className={styles.feature_container_two}>
             <div className={styles.right}>
               <h3 className={styles.title}>
-                Our dedication to going 'Beyond Imagination' is what sets us
-                apart
+                {t("home-aboutdetails-feature-one")}
               </h3>
               <img
                 data-aos="fade-up"
@@ -103,12 +107,19 @@ const AboutDetails = () => {
                 alt="hoffman"
               /> */}
 
-                <img
-                  data-aos="zoom-in"
-                  src="/images/coffee-bg.png"
-                  alt="coffee"
-                  className={styles.coffee_bg}
-                />
+                {i18n.language === "en" ? (
+                  <img
+                    src="/images/make_coffee.png"
+                    alt="about-cup"
+                    className={styles.coffee_bg}
+                  />
+                ) : (
+                  <img
+                    src="/images/coffee-bg.png"
+                    alt="about-cup"
+                    className={styles.coffee_bg}
+                  />
+                )}
               </div>
             </div>
           </div>

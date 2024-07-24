@@ -1,18 +1,19 @@
-import { useEffect, useState } from "react";
-import MobileMenu from "../MobileMenu/MobileMenu";
+import { useEffect, useState } from "react"
+import MobileMenu from "../MobileMenu/MobileMenu"
 import { FaBarsStaggered } from "react-icons/fa6"
-import styles from "./styles.module.scss";
-import HeaderIcons from "../HeaderIcons/HeaderIcons";
+import styles from "./styles.module.scss"
+import HeaderIcons from "../HeaderIcons/HeaderIcons"
 import { BiChevronDown, BiChevronUp } from "react-icons/bi"
-import { useTranslation } from 'react-i18next';
-import Logo from "../Logo/Logo";
-
+import { useTranslation } from "react-i18next"
+import Logo from "../Logo/Logo"
 
 const Header = ({ fixedHeader, customHeader, customBG }) => {
-  const { t, i18n } = useTranslation();
-  const [showMobMenu, setShowMobMenu] = useState(false);
-  const [showCountriesMenu, setShowCountriesMenu] = useState(false);
-  const [selectCountry, setSelectCountry] = useState(t("home-header-country-chooseCountry"));
+  const { t, i18n } = useTranslation()
+  const [showMobMenu, setShowMobMenu] = useState(false)
+  const [showCountriesMenu, setShowCountriesMenu] = useState(false)
+  const [selectCountry, setSelectCountry] = useState(
+    t("home-header-country-chooseCountry")
+  )
 
   // useEffect(() => {
   //   if (i18n.dir) {
@@ -21,16 +22,16 @@ const Header = ({ fixedHeader, customHeader, customBG }) => {
   // }, [selectCountry, i18n.dir])
 
   useEffect(() => {
-    setSelectCountry(t("home-header-country-chooseCountry"));
+    setSelectCountry(t("home-header-country-chooseCountry"))
   }, [t])
 
   const showMobMenuHandler = () => {
-    setShowMobMenu(!showMobMenu);
-  };
+    setShowMobMenu(!showMobMenu)
+  }
 
   const chooseCountryHandler = (country) => {
-    setSelectCountry(country);
-    setShowCountriesMenu(false);
+    setSelectCountry(country)
+    setShowCountriesMenu(false)
   }
 
   const showCountriesMenuHandler = () => {
@@ -39,11 +40,24 @@ const Header = ({ fixedHeader, customHeader, customBG }) => {
 
   return (
     <header
-      className={fixedHeader ? styles.fixedHeader : styles.header && customHeader ? styles.customHeader : styles.header}
+      className={
+        fixedHeader
+          ? styles.fixedHeader
+          : styles.header && customHeader
+          ? styles.customHeader
+          : styles.header
+      }
       // className={customHeader ? styles.customHeader : styles.header}
-      style={customBG ? { backgroundColor: "#1d1d19" } : { backgroundColor: "transparent" }}
+      style={
+        customBG
+          ? { backgroundColor: "#1d1d19" }
+          : { backgroundColor: "transparent" }
+      }
     >
-      <MobileMenu showMobMenuHandler={showMobMenuHandler} showMobMenu={showMobMenu} />
+      <MobileMenu
+        showMobMenuHandler={showMobMenuHandler}
+        showMobMenu={showMobMenu}
+      />
       <div className={customHeader ? styles.containerCustom : styles.container}>
         <div className={styles.navLinks}>
           {/* {
@@ -53,11 +67,7 @@ const Header = ({ fixedHeader, customHeader, customBG }) => {
               </div>
             )
           } */}
-          {
-            customHeader ? null : (
-              <HeaderIcons />
-            )
-          }
+          {customHeader ? null : <HeaderIcons />}
           {/* {
             customHeader ? (
               <div className={styles.countriesList}>

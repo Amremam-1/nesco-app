@@ -7,6 +7,7 @@ export const menuData = {
       descriptionEn: "Espresso shots topped with hot water",
       descriptionAr: "جرعات إسبريسو مغطاة بالماء الساخن",
       imgUrl: "/images/ourmenu/Hot Drinks/cafe-americano.jpg",
+      link: "/store",
     },
     {
       id: "02",
@@ -15,6 +16,7 @@ export const menuData = {
       descriptionEn: "Dark espresso lies in wait under milk foam",
       descriptionAr: "الإسبريسو الداكن يختبئ تحت رغوة الحليب",
       imgUrl: "/images/ourmenu/Hot Drinks/cappuccino.jpg",
+      link: "/store",
     },
     {
       id: "03",
@@ -25,6 +27,7 @@ export const menuData = {
       imgUrl: "/images/ourmenu/Hot Drinks/espresso.jpg",
       typeEn: "Classic",
       typeAr: "كلاسيكي",
+      link: "/store",
     },
     {
       id: "04",
@@ -33,6 +36,7 @@ export const menuData = {
       descriptionEn: "Freshly steamed milk with vanilla-flavored syrup",
       descriptionAr: "حليب بخار طازج مع شراب بنكهة الفانيليا",
       imgUrl: "/images/ourmenu/Hot Drinks/caramel-macchiato.jpg",
+      link: "/store",
     },
     {
       id: "05",
@@ -41,6 +45,7 @@ export const menuData = {
       descriptionEn: "Full-bodied espresso combined with mocha",
       descriptionAr: "إسبريسو غني ممزوج بالموكّا",
       imgUrl: "/images/ourmenu/Hot Drinks/caffee-mocha.jpg",
+      link: "/store",
     },
   ],
 
@@ -52,6 +57,7 @@ export const menuData = {
       descriptionEn: "Iced Coffee Blend with milk served chilled",
       descriptionAr: "خلطة قهوة مثلجة مع حليب تُقدّم باردة",
       imgUrl: "/images/ourmenu/Iced Coffee/ice-coffee.jpg",
+      link: "/store",
     },
     {
       id: "07",
@@ -60,6 +66,7 @@ export const menuData = {
       descriptionEn: "Smooth signature Espresso Roast over ice boasts",
       descriptionAr: "تحميص إسبريسو المميز الناعم على الثلج يقدّم",
       imgUrl: "/images/ourmenu/Iced Coffee/iced-espresso.jpg",
+      link: "/store",
     },
     {
       id: "08",
@@ -68,6 +75,7 @@ export const menuData = {
       descriptionEn: "Signature caramel crosshatch and a mocha drizzle",
       descriptionAr: "تشكيلة الكراميل المميزة بلمسة تقاطيع وقطرات الموكّا",
       imgUrl: "/images/ourmenu/Iced Coffee/ice caramel machiatto.png",
+      link: "/store",
     },
     {
       id: "09",
@@ -78,6 +86,7 @@ export const menuData = {
       imgUrl: "/images/ourmenu/Iced Coffee/ice shaken.png",
       typeEn: "Barista Recommended",
       typeAr: "موصى به من قبل الباريستا",
+      link: "/store",
     },
     {
       id: "010",
@@ -86,6 +95,7 @@ export const menuData = {
       descriptionEn: "Signature espresso are intentionally combined over ice",
       descriptionAr: "الإسبريسو المميز يُمزج عمدًا فوق الثلج",
       imgUrl: "/images/ourmenu/Iced Coffee/ice latte.png",
+      link: "/store",
     },
   ],
 
@@ -97,6 +107,7 @@ export const menuData = {
       descriptionEn: "Classic croissant is made with real butter",
       descriptionAr: "الكرواسون الكلاسيكي يُصنع من زبدة حقيقية",
       imgUrl: "/images/ourmenu/Desserts & Bakery/d.jpg",
+      link: "/store",
     },
     {
       id: "111",
@@ -105,6 +116,7 @@ export const menuData = {
       descriptionEn: "Rich chocolate brownie with chunks of chocolate",
       descriptionAr: "براونيز الشوكولاتة الغنية مع قطع الشوكولاتة",
       imgUrl: "/images/ourmenu/Desserts & Bakery/Chocolate Chip Cookies.png",
+      link: "/store",
     },
     {
       id: "110",
@@ -113,6 +125,7 @@ export const menuData = {
       descriptionEn: "A traditional scone with blueberries, buttermilk",
       descriptionAr: "سكون تقليدي مع التوت الأزرق والحليب الرائب",
       imgUrl: "/images/ourmenu/Desserts & Bakery/Muffin Blueberry.png",
+      link: "/store",
     },
   ],
 
@@ -124,6 +137,7 @@ export const menuData = {
       descriptionEn: "White-meat chicken, veggie slaw, cucumber, cilantro",
       descriptionAr: "دجاج لحم أبيض، سلطة خضروات، خيار، كزبرة",
       imgUrl: "/images/ourmenu/Sandwiches/sandwishes.png",
+      link: "/store",
     },
     {
       id: "223",
@@ -134,6 +148,7 @@ export const menuData = {
       descriptionAr:
         "صدر دجاج مشوي بطريقت السوس فيد، طري وعصير، مع فلفل أحمر محمص",
       imgUrl: "/images/ourmenu/Sandwiches/lunch.jpg",
+      link: "/store",
     },
     {
       id: "224",
@@ -144,6 +159,7 @@ export const menuData = {
       descriptionAr:
         "دجاج أبيض مشوي، صلصة الفول السوداني وجوز الهند، سلطة تشيلي والليمون، وجبنة كريمية بالزنجبيل",
       imgUrl: "/images/ourmenu/Sandwiches/TURKEY CHEESE CIABATTA SANDWICH.png",
+      link: "/store",
     },
   ],
 }

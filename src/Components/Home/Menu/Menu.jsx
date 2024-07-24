@@ -42,7 +42,7 @@ const Menu = () => {
                     : item.descriptionAr}
                 </p>
               </div>
-              <a href="" className={styles.add_to_cart}>
+              <a href={item.link} className={styles.add_to_cart}>
                 <MdOutlineAddShoppingCart className={styles.icon} />
               </a>
             </div>
@@ -64,7 +64,7 @@ const Menu = () => {
                   : item.descriptionAr}
               </p>
             </div>
-            <a href="" className={styles.add_to_cart}>
+            <a href={item.link} className={styles.add_to_cart}>
               <MdOutlineAddShoppingCart className={styles.icon} />
             </a>
           </div>

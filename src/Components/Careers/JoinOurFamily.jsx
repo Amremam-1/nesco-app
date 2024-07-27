@@ -1,11 +1,16 @@
-import { useTranslation } from "react-i18next";
-import styles from "./styles.module.scss";
-import Input from "../Auth/Input/Input";
+import { useTranslation } from "react-i18next"
+import styles from "./styles.module.scss"
+import Input from "../Auth/Input/Input"
+import { useState } from "react"
 
 const JoinOurFamily = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation()
 
+  const [cvFileName, setCvFileName] = useState("")
 
+  const handleFileChange = (e) => {
+    setCvFileName(e.target.files[0]?.name)
+  }
   return (
     <section className={styles.joinOurFamily}>
       <div className={styles.joinOurFamily__container}>
@@ -14,7 +19,10 @@ const JoinOurFamily = () => {
         </div>
       </div>
       <div className={styles.image}>
-        <img src={process.env.PUBLIC_URL + "/images/join-our-family2.png"} alt="Join-Our-Family" />
+        <img
+          src={process.env.PUBLIC_URL + "/images/join-our-family2.png"}
+          alt="Join-Our-Family"
+        />
       </div>
       <div className={styles.joinOurFamily__container}>
         <div className={styles.contactUsTxt}>
@@ -27,39 +35,39 @@ const JoinOurFamily = () => {
           <h4 className={styles.smTitle}>{t("careers-text-6")}</h4>
           <div className={styles.wrapper}>
             <div className={styles.inpBox}>
-              <Input 
+              <Input
                 name="fullName"
                 inputType="text"
-                placeHolder={t("careers-text-7")} 
+                placeHolder={t("careers-text-7")}
               />
-              <Input 
+              <Input
                 name="email"
                 inputType="email"
-                placeHolder={t("careers-text-8")} 
+                placeHolder={t("careers-text-8")}
               />
             </div>
             <div className={styles.inpBox}>
-              <Input 
+              <Input
                 name="dateOfBirth"
                 inputType="text"
-                placeHolder={t("careers-text-9")} 
+                placeHolder={t("careers-text-9")}
               />
-              <Input 
+              <Input
                 name="gender"
                 inputType="text"
-                placeHolder={t("careers-text-10")} 
+                placeHolder={t("careers-text-10")}
               />
             </div>
             <div className={styles.inpBox}>
-              <Input 
+              <Input
                 name="maritalStatus"
                 inputType="text"
-                placeHolder={t("careers-text-11")} 
+                placeHolder={t("careers-text-11")}
               />
-              <Input 
+              <Input
                 name="nationality"
                 inputType="text"
-                placeHolder={t("careers-text-12")} 
+                placeHolder={t("careers-text-12")}
               />
             </div>
             <div className={styles.inpBoxAsk}>
@@ -70,7 +78,7 @@ const JoinOurFamily = () => {
                     // onChange={changeMethod}
                     value="doyoulive"
                     id="yes"
-                    type="radio" 
+                    type="radio"
                     name="group"
                     checked
                   />
@@ -81,7 +89,7 @@ const JoinOurFamily = () => {
                     // onChange={changeMethod}
                     value="doyoulive"
                     id="no"
-                    type="radio" 
+                    type="radio"
                     name="group"
                     checked
                   />
@@ -90,39 +98,39 @@ const JoinOurFamily = () => {
               </div>
             </div>
             <div className={styles.inpBox}>
-              <Input 
+              <Input
                 name="country"
                 inputType="text"
-                placeHolder={t("careers-text-16")} 
+                placeHolder={t("careers-text-16")}
               />
-              <Input 
+              <Input
                 name="city"
                 inputType="text"
-                placeHolder={t("careers-text-17")} 
+                placeHolder={t("careers-text-17")}
               />
             </div>
             <div className={styles.inpBox}>
-              <Input 
+              <Input
                 name="district"
                 inputType="text"
-                placeHolder={t("careers-text-18")} 
+                placeHolder={t("careers-text-18")}
               />
-              <Input 
+              <Input
                 name="mobile"
                 inputType="text"
-                placeHolder={t("careers-text-19")} 
+                placeHolder={t("careers-text-19")}
               />
             </div>
             <div className={styles.inpBox}>
-              <Input 
+              <Input
                 name="school"
                 inputType="text"
-                placeHolder={t("careers-text-20")} 
+                placeHolder={t("careers-text-20")}
               />
             </div>
             <h4 className={styles.smTitle}>{t("careers-text-21")}</h4>
             <div className={styles.inpBox}>
-              <Input 
+              <Input
                 name="school"
                 inputType="text"
                 placeHolder={t("careers-text-21")}
@@ -131,7 +139,7 @@ const JoinOurFamily = () => {
               />
             </div>
             <div className={styles.inpBox}>
-              <Input 
+              <Input
                 name="school"
                 inputType="text"
                 placeHolder={t("careers-text-22")}
@@ -140,8 +148,13 @@ const JoinOurFamily = () => {
             </div>
             <div className={styles.btns}>
               <div className={styles.cv}>
-                <label htmlFor="upload" className={styles.uploadBtn}>{t("careers-text-23")}</label>
-                <input id="upload" type="file" />
+                <label htmlFor="upload" className={styles.uploadBtn}>
+                  {t("careers-text-23")}
+                </label>
+                <input id="upload" type="file" onChange={handleFileChange} />
+                {cvFileName && (
+                  <span className={styles.fileName}>{cvFileName}</span>
+                )}
               </div>
               <button className={styles.sendBtn}>{t("careers-text-24")}</button>
             </div>
@@ -152,4 +165,4 @@ const JoinOurFamily = () => {
   )
 }
 
-export default JoinOurFamily;
+export default JoinOurFamily

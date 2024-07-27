@@ -1,39 +1,44 @@
-import { useTranslation } from "react-i18next";
-import AboutFranchising from "./AboutFranchising/AboutFranchising";
-import ContactInfo from "./ContactInfo/ContactInfo";
-import FinancialCondition from "./FinancialCondition/FinancialCondition";
-import JobInfo from "./JobInfo/JobInfo";
-import PersonalInfo from "./PersonalInfo/PersonalInfo";
-import styles from "./styles.module.scss";
-import { useState } from "react";
-import Stepper from "../Checkout/Stepper/Stepper";
-import Summary from "./Summary/Summary";
-import useFranchising from "../../hooks/franchising/useFranchising";
+import { useTranslation } from "react-i18next"
+import AboutFranchising from "./AboutFranchising/AboutFranchising"
+import ContactInfo from "./ContactInfo/ContactInfo"
+import FinancialCondition from "./FinancialCondition/FinancialCondition"
+import JobInfo from "./JobInfo/JobInfo"
+import PersonalInfo from "./PersonalInfo/PersonalInfo"
+import styles from "./styles.module.scss"
+import { useState } from "react"
+import Stepper from "../Checkout/Stepper/Stepper"
+import Summary from "./Summary/Summary"
+import useFranchising from "../../hooks/franchising/useFranchising"
 
 const Franchising = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation()
 
-  const steps = [t("franchise-step-1"), t("franchise-step-2"), t("franchise-step-3"), t("franchise-step-4"), ];
-  const [currentStep, setCurrentStep] = useState(1);
-  const [complete, setComplete] = useState(false);
+  const steps = [
+    t("franchise-step-1"),
+    t("franchise-step-2"),
+    t("franchise-step-3"),
+    t("franchise-step-4"),
+  ]
+  const [currentStep, setCurrentStep] = useState(1)
+  const [complete, setComplete] = useState(false)
 
   const stepProgressHandler = (isSuccess) => {
     if (currentStep === steps.length || isSuccess) {
-      setComplete(true);
+      setComplete(true)
     } else {
-      setCurrentStep((prev) => prev + 1);
+      setCurrentStep((prev) => prev + 1)
     }
-  };
+  }
 
   const prevHandler = () => {
     if (currentStep > 1) {
-      setCurrentStep((prev) => prev - 1);
+      setCurrentStep((prev) => prev - 1)
     }
   }
 
   const nextHandler = () => {
     if (currentStep < steps.length) {
-      setCurrentStep((prev) => prev + 1);
+      setCurrentStep((prev) => prev + 1)
     }
   }
 
@@ -58,8 +63,8 @@ const Franchising = () => {
     educQualificationError,
     onChangeEducQualification,
     onBlurEducQualification,
-    onSubmit
-  ] = useFranchising();
+    onSubmit,
+  ] = useFranchising()
 
   return (
     <section className={styles.franchising}>
@@ -69,8 +74,17 @@ const Franchising = () => {
           <p className={styles.text}>{t("franchise-head-text-2")}</p>
           <p className={styles.text}>{t("franchise-head-text-3")}</p>
           <h2 className={styles.title}>{t("franchise-head-text-4")}</h2>
+
+          <a
+            href="https://forms.gle/8hubdCKa3hsnaMH3A"
+            className={styles.franchising__link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t("franchise-link-text")}
+          </a>
         </div>
-        <Stepper 
+        {/* <Stepper 
           steps={steps}
           currentStep={currentStep}
           complete={complete}
@@ -89,7 +103,7 @@ const Franchising = () => {
               <button disabled={currentStep < 4} className={styles.sendBtn} onClick={stepProgressHandler}>{t("franchise-sentBtn")}</button>
             </div>
           ) : null
-        }
+        } */}
       </div>
     </section>
   )

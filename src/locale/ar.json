@@ -54,7 +54,7 @@
   "home-menu-category-lunch": "الغداء",
 
   "home-shop-titlemain": "متجرنا",
-
+  "franchise-link-text": "قدم الان",
 
   "home-about-since": "منذ",
   "home-about-desc": "ستريتو هي أول علامة تجارية حديثة و محلية بالكامل متخصصة في صناعة القهوة في المملكة العربية السعودية.",
@@ -78,6 +78,7 @@
   "home-subscribe-subscribe": "الإشتراك",
   "home-footer-payMethods": "نحن نقبل الدفع عبر الإنترنت",
   "home-footer-contactUsOn": "اتصل بنا على",
+  "home-footer-contactUsOnemail": "تواصل معنا على",
   "home-footer-copyrights": "حقوق النشر © نستريتو 2023",
   "home-footer-siteMap": "خريطة الموقع",
   "home-footer-terms": "الشروط و الأحكام",
@@ -85,7 +86,7 @@
 
   "home-footer-faq": "أسئلة وأجوبة",
   "home-footer-contactUs": "تواصل معنا",
-  "home-footer-corporateLogin": "تسجيل دخول الشركات",
+  "home-footer-corporateLogin": "تسجيل الشكاوى",
   "store-sidebar-store": "المتجر",
   "store-sidebar-search": "بحث",
   "store-sidebar-bestSeller": "الأكثر مبيعا",

@@ -6,6 +6,7 @@ import { FaLinkedinIn, FaInstagram, FaTiktok } from "react-icons/fa6";
 import styles from "./styles.module.scss";
 import useGetSetting from "../../../hooks/setting/useGetSetting";
 import { useTranslation } from "react-i18next";
+import { HiOutlineMailOpen } from "react-icons/hi";
 
 
 const MobileMenu = ({ showMobMenuHandler, showMobMenu }) => {
@@ -92,6 +93,10 @@ const MobileMenu = ({ showMobMenuHandler, showMobMenu }) => {
             <div className={styles.phone}>
               <FaPhoneFlip />
               <a href="tel:+966 8007550022" title="+966 8007550022">8007550022</a>
+            </div>
+            <div className={styles.phone}>
+              <HiOutlineMailOpen />
+              <a href="tel:info@gmail.com" title="info@gmail.com">info@gmail.com</a>
             </div>
             <ul className={styles.socialList}>
               <li className={styles.socialList__item}>

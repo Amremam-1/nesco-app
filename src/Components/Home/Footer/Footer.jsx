@@ -43,6 +43,13 @@ const Footer = () => {
                 8007550022
               </a>
             </div>
+
+            <div className={styles.contactus}>
+              <p className={styles.text}>{t("home-footer-contactUsOnemail")}</p>
+              <a href="tel:info@gmail.com" title="info@gmail.com">
+                info@gmail.com
+              </a>
+            </div>
           </div>
           <div className={styles.bottom}>
             <div className={styles.links}>

@@ -1,6 +1,5 @@
-@import '../../index.scss';
-@import '../../sass/mixins';
-
+@import "../../index.scss";
+@import "../../sass/mixins";
 
 .franchising {
   margin-top: 60px;
@@ -43,6 +42,23 @@
         font-weight: 600;
         line-height: 36px;
       }
+
+      .franchising__link {
+        display: inline-block;
+        padding: 10px 20px;
+        // margin-top: 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
     }
     .btns {
       margin-top: 16px;
@@ -65,7 +81,7 @@
         opacity: 1;
         &:disabled {
           cursor: not-allowed;
-          opacity: 0.0;
+          opacity: 0;
         }
       }
       .prevBtn {

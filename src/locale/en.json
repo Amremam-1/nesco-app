@@ -55,7 +55,7 @@
 
   "home-shop-title": "Our",
   "home-shop-subtitle": "Shop",
-
+  "franchise-link-text": "Apply Now",
 
 
   "home-about-since": "Since",
@@ -80,6 +80,7 @@
   "home-subscribe-subscribe": "subscribe",
   "home-footer-payMethods": "We Accept Online Payments",
   "home-footer-contactUsOn": "Call us on",
+  "home-footer-contactUsOnemail": "Send Email on",
   "home-footer-copyrights": "Copyrights © Nestretto’s 2023",
   "home-footer-siteMap": "Site Map",
   "home-footer-terms": "Terms & Conditions",
@@ -87,7 +88,7 @@
 
   "home-footer-faq": "FAQ",
   "home-footer-contactUs": "Contact Us",
-  "home-footer-corporateLogin": "Corporate Login",
+  "home-footer-corporateLogin": "Complaint Registration",
   "store-sidebar-store": "store",
   "store-sidebar-search": "search",
   "store-sidebar-bestSeller": "Best Selling",

@@ -821,5 +821,20 @@
   "franchise-summary": "Summary",
   "franchise-response": "Your response has been recorded",
   "yes": "Yes",
-  "no": "No"
+  "no": "No",
+
+  "Political_one": "Return and Exchange Policy",
+  "Political_two": "At Nestrito, we take pride in our name and reputation for excellent quality and value.",
+  "Political_three": "If you are not satisfied, we will assist you with an exchange or refund according to our policy, which is as follows:",
+  "Political_four": "The customer must inform the online store team at",
+  "Political_five": "within a period not exceeding two days from the date of receiving the invoice/order that was sent to them, stating the reason for the exchange or return.",
+  "Political_six": "Only unopened and unused items will be considered (excluding coffee).",
+  "Political_seven": "In case of any issue with the quality of coffee beans or ground coffee,",
+  "Political_eight": "For accessories and tools, returns and exchanges are allowed if the item is in its original condition at the time of purchase and packaged in its original brand packaging (Nestrito).",
+  "Political_nine": "Exchanges and returns are free of charge for items sent to the customer with an error or manufacturing defect, such as:",
+  "Political_ten": "If the customer receives a damaged product or one with a manufacturing defect,",
+  "Political_1": "The original amount stated on the purchase invoice (order summary) will be refunded without shipping fees or international customs and tax charges.",
+  "Political_2": "In other cases of exchange or return (other than what has been mentioned), the customer bears the shipping cost only.",
+  "Political_3": "Returns must be made according to the conditions mentioned within two days of the customer's receipt of the shipment, considering the specified period for the return and exchange policy.",
+  "Political_4": "If the customer receives the shipment from the shipping company and the shipment is returned to us, a new shipping fee will be charged if the customer wishes to reship it."
 }

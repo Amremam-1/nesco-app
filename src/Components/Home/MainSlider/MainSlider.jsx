@@ -56,7 +56,7 @@ const MainSlider = () => {
 
   const getData = async (url) => {
     const baseUrl = axios.create({
-      baseURL: "https://nestrettocoffee.com/dashboard/api",
+      baseURL: "https://filterr.net/dashboard/api",
     })
 
     const config = {

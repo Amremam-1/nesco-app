@@ -23,7 +23,7 @@ const AboutDetails = () => {
         className={styles.about_details}
         style={
           {
-            // backgroundImage: `url(${homePageData?.path}${homePageData?.pics?.["2"]})`,
+            backgroundImage: `url(${homePageData?.path}${homePageData?.pics?.["2"]})`,
           }
         }
       >

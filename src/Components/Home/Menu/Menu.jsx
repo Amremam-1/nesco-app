@@ -120,11 +120,9 @@ const Menu = () => {
 
       <div
         className={styles.our_shop}
-        style={
-          {
-            // backgroundImage: `url(${homePageData?.path}${homePageData?.pics?.["2"]})`,
-          }
-        }
+        style={{
+          backgroundImage: `url(${homePageData?.path}${homePageData?.pics?.["3"]})`,
+        }}
       >
         <div className={styles.details_image}>
           <div className={styles.details_image_content} data-aos="zoom-in">

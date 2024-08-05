@@ -36,6 +36,8 @@ import GiftsPage from "./Pages/Gifts/GiftsPage"
 import GiftPage from "./Pages/GiftPage/GiftPage"
 import InvoicePage from "./Pages/Invoice/InvoicePage"
 import PoliticalPage from "./Pages/Political/PoliticalPage"
+import GoogleCallback from "./Pages/GoogleCallback/GoogleCallback"
+
 
 // import Scrollbar from 'smooth-scrollbar';
 
@@ -66,6 +68,7 @@ const router = createBrowserRouter([
         path: "/login",
         element: <LoginPage />,
       },
+      { path: "/auth/google", element: <GoogleCallback /> },
       {
         path: "/corporate-login",
         element: <CorporateLogin />,

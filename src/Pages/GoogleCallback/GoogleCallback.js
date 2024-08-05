@@ -9,7 +9,7 @@ function GoogleCallback() {
   const location = useLocation()
 
   useEffect(() => {
-    fetch(`http://localhost:80/api/auth/callback${location.search}`, {
+    fetch(`https://filterr.net/api/auth/callback${location.search}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -38,7 +38,7 @@ function GoogleCallback() {
       return
     }
 
-    fetch(`http://localhost:80/api/user`, {
+    fetch(`https://filterr.net/api/user`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

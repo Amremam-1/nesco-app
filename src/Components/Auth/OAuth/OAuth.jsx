@@ -59,11 +59,11 @@ import { AiFillGoogleCircle } from "react-icons/ai"
 import { useState, useEffect } from "react"
 
 const OAuth = () => {
-  const [loginUrl, setLoginUrl] = useState("")
+  const [loginUrl, setLoginUrl] = useState(null)
   const [error, setError] = useState("")
 
   useEffect(() => {
-    fetch("http://localhost:80/api/auth", {
+    fetch("https://filterr.net/api/auth", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -71,6 +71,7 @@ const OAuth = () => {
     })
       .then((response) => {
         if (response.ok) {
+          console.log(response)
           return response.json()
         }
         throw new Error("Something went wrong!")

@@ -1,5 +1,3 @@
-// src/GoogleCallback.js
-
 import React, { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 
@@ -7,10 +5,9 @@ function GoogleCallback() {
   const [loading, setLoading] = useState(true)
   const [data, setData] = useState({})
   const [user, setUser] = useState(null)
+  const [error, setError] = useState("")
   const location = useLocation()
 
-  // On page load, we take "search" parameters
-  // and proxy them to /api/auth/callback on our Laravel API
   useEffect(() => {
     fetch(`http://localhost:80/api/auth/callback${location.search}`, {
       headers: {
@@ -19,17 +16,28 @@ function GoogleCallback() {
       },
     })
       .then((response) => {
-        return response.json()
+        if (response.ok) {
+          return response.json()
+        }
+        throw new Error("Callback failed")
       })
       .then((data) => {
         setLoading(false)
         setData(data)
       })
-  }, [])
+      .catch((error) => {
+        console.error(error)
+        setLoading(false)
+        setError("Failed to authenticate with Google.")
+      })
+  }, [location.search])
 
-  // Helper method to fetch User data for authenticated user
-  // Watch out for "Authorization" header that is added to this call
   function fetchUserData() {
+    if (!data.access_token) {
+      setError("Access token is missing.")
+      return
+    }
+
     fetch(`http://localhost:80/api/user`, {
       headers: {
         "Content-Type": "application/json",
@@ -38,28 +46,35 @@ function GoogleCallback() {
       },
     })
       .then((response) => {
-        return response.json()
+        if (response.ok) {
+          return response.json()
+        }
+        throw new Error("Failed to fetch user data")
       })
       .then((data) => {
         setUser(data)
+      })
+      .catch((error) => {
+        console.error(error)
+        setError("Failed to fetch user data.")
       })
   }
 
   if (loading) {
     return <DisplayLoading />
   } else {
-    if (user != null) {
-      return <DisplayData data={user} />
-    } else {
-      return (
-        <div>
-          <DisplayData data={data} />
+    return (
+      <div>
+        {error && <div>{error}</div>}
+        <DisplayData data={data} />
+        {!user && (
           <div style={{ marginTop: 10 }}>
             <button onClick={fetchUserData}>Fetch User</button>
           </div>
-        </div>
-      )
-    }
+        )}
+        {user && <DisplayData data={user} />}
+      </div>
+    )
   }
 }
 
@@ -67,10 +82,10 @@ function DisplayLoading() {
   return <div>Loading....</div>
 }
 
-function DisplayData(data) {
+function DisplayData({ data }) {
   return (
     <div>
-      <samp>{JSON.stringify(data, null, 2)}</samp>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   )
 }

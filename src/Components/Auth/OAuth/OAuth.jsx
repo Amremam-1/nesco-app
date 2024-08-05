@@ -59,7 +59,8 @@ import { AiFillGoogleCircle } from "react-icons/ai"
 import { useState, useEffect } from "react"
 
 const OAuth = () => {
-  const [loginUrl, setLoginUrl] = useState(null)
+  const [loginUrl, setLoginUrl] = useState("")
+  const [error, setError] = useState("")
 
   useEffect(() => {
     fetch("http://localhost:80/api/auth", {
@@ -75,12 +76,16 @@ const OAuth = () => {
         throw new Error("Something went wrong!")
       })
       .then((data) => setLoginUrl(data.url))
-      .catch((error) => console.error(error))
+      .catch((error) => {
+        console.error(error)
+        setError("Failed to load Google login URL.")
+      })
   }, [])
 
   return (
     <div>
-      {loginUrl != null && (
+      {error && <div className={styles.error}>{error}</div>}
+      {loginUrl && (
         <a href={loginUrl} className={styles.registerBtn}>
           <AiFillGoogleCircle className={styles.icon} />
           Continue with Google

@@ -63,7 +63,7 @@ const OAuth = () => {
   const [error, setError] = useState("")
 
   useEffect(() => {
-    fetch("https://filterr.net/api/auth", {
+    fetch("https://filterr.net/dashboard/api/auth", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -86,12 +86,7 @@ const OAuth = () => {
   return (
     <div>
       {error && <div className={styles.error}>{error}</div>}
-      {loginUrl && (
-        <a href={loginUrl} className={styles.registerBtn}>
-          <AiFillGoogleCircle className={styles.icon} />
-          Continue with Google
-        </a>
-      )}
+      {loginUrl != null && <a href={loginUrl}>Google Sign In</a>}
     </div>
   )
 }

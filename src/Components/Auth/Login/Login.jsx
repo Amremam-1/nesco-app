@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next"
 import Popup from "../../Utils/Popup/Popup"
 import { ToastContainer } from "react-toastify"
 import OAuth from "../OAuth/OAuth"
-
+import { AiFillGoogleCircle } from "react-icons/ai"
 const Login = ({ pageTitle }) => {
   const { t, i18n } = useTranslation()
 
@@ -61,7 +61,10 @@ const Login = ({ pageTitle }) => {
                 {t("login-signIn")}
               </button>
 
-              <OAuth />
+              <a href="/login-google" className={styles.registerBtn}>
+                <AiFillGoogleCircle className={styles.icon} />
+                Continue with Google
+              </a>
             </div>
 
             <a className={styles.forgetPasss} href="/forget-password">

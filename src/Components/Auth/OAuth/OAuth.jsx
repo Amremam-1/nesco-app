@@ -59,7 +59,7 @@ import { AiFillGoogleCircle } from "react-icons/ai"
 import { useState, useEffect } from "react"
 
 const OAuth = () => {
-  const [loginUrl, setLoginUrl] = useState("")
+  const [loginUrl, setLoginUrl] = useState(null)
 
   useEffect(() => {
     fetch("http://localhost:80/api/auth", {

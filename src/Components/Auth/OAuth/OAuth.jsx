@@ -63,7 +63,7 @@ const OAuth = () => {
   const [error, setError] = useState("")
 
   useEffect(() => {
-    fetch("https://filterr.net/dashboard/api/auth", {
+    fetch("/dashboard/api/auth", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -76,7 +76,14 @@ const OAuth = () => {
         }
         throw new Error("Something went wrong!")
       })
-      .then((data) => setLoginUrl(data.url))
+      .then((data) => {
+        console.log(data)
+        if (data.url) {
+          setLoginUrl(data.url)
+        } else {
+          throw new Error("URL not found in response")
+        }
+      })
       .catch((error) => {
         console.error(error)
         setError("Failed to load Google login URL.")

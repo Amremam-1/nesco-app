@@ -9,7 +9,7 @@ function GoogleCallback() {
   const location = useLocation()
 
   useEffect(() => {
-    fetch(`https://filterr.net/api/auth/callback${location.search}`, {
+    fetch(`/api/auth/callback${location.search}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -22,8 +22,12 @@ function GoogleCallback() {
         throw new Error("Callback failed")
       })
       .then((data) => {
-        setLoading(false)
-        setData(data)
+        if (data.access_token) {
+          setLoading(false)
+          setData(data)
+        } else {
+          throw new Error("Access token missing in response")
+        }
       })
       .catch((error) => {
         console.error(error)
@@ -38,7 +42,7 @@ function GoogleCallback() {
       return
     }
 
-    fetch(`https://filterr.net/api/user`, {
+    fetch(`/api/user`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

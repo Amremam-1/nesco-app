@@ -39,7 +39,6 @@ import PoliticalPage from "./Pages/Political/PoliticalPage"
 import GoogleCallback from "./Pages/GoogleCallback/GoogleCallback"
 import OAuth from "./Components/Auth/OAuth/OAuth"
 
-
 // import Scrollbar from 'smooth-scrollbar';
 
 // const options = {
@@ -69,10 +68,7 @@ const router = createBrowserRouter([
         path: "/login",
         element: <LoginPage />,
       },
-      {
-        path: "/login-google",
-        element: <OAuth />,
-      },
+
       { path: "/auth/google", element: <GoogleCallback /> },
       {
         path: "/corporate-login",

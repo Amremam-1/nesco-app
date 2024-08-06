@@ -61,10 +61,7 @@ const Login = ({ pageTitle }) => {
                 {t("login-signIn")}
               </button>
 
-              <a href="/login-google" className={styles.registerBtn}>
-                <AiFillGoogleCircle className={styles.icon} />
-                Continue with Google
-              </a>
+              <OAuth />
             </div>
 
             <a className={styles.forgetPasss} href="/forget-password">

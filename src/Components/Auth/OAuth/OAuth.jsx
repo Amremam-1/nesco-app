@@ -93,7 +93,13 @@ const OAuth = () => {
   return (
     <div>
       {error && <div className={styles.error}>{error}</div>}
-      {loginUrl != null && <a href={loginUrl}>Google Sign In</a>}
+
+      {loginUrl != null && (
+        <a href={loginUrl} className={styles.registerBtn}>
+          <AiFillGoogleCircle className={styles.icon} />
+          Continue with Google
+        </a>
+      )}
     </div>
   )
 }

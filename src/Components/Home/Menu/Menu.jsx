@@ -174,6 +174,7 @@ const Menu = () => {
   const handleClickedCategory = (categoryName, categoryId) => {
     navigate("/store")
     dispatch(getCategoryName({ categoryName, categoryId }))
+    console.log(categoryId)
   }
 
   const renderMenuItems = (items, categoryName) => {

@@ -10,6 +10,7 @@ const GoogleCallback = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
+    console.log("Location search:", location.search)
     fetch(`/api/auth/callback${location.search}`, {
       headers: {
         "Content-Type": "application/json",

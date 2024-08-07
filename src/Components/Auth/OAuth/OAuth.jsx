@@ -83,7 +83,7 @@ const OAuth = () => {
         }
       })
       .catch((error) => {
-        console.error(error)
+        console.log(error)
         setError("Failed to load Google login URL.")
       })
   }, [])

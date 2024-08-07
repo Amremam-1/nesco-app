@@ -21,11 +21,9 @@ const AboutDetails = () => {
     <section className={styles.wrapper_main}>
       <div
         className={styles.about_details}
-        style={
-          {
-            // backgroundImage: `url(${homePageData?.path}${homePageData?.pics?.["2"]})`,
-          }
-        }
+        style={{
+          backgroundImage: `url(${homePageData?.path}${homePageData?.pics?.["2"]})`,
+        }}
       >
         <div className={styles.details_image}>
           <div className={styles.details_image_content} data-aos="zoom-in">

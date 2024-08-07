@@ -158,11 +158,13 @@ import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { getCategoryName } from "../../../redux/slices/StoreSlice"
+import useGetHomePageData from "../../../hooks/pages/useGetHomePageData"
 
 const Menu = () => {
   const { t, i18n } = useTranslation()
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const [homePageData] = useGetHomePageData()
 
   useEffect(() => {
     Aos.init({
@@ -285,7 +287,12 @@ const Menu = () => {
         </div>
       </div>
 
-      <div className={styles.our_shop}>
+      <div
+        className={styles.our_shop}
+        style={{
+          backgroundImage: `url(${homePageData?.path}${homePageData?.pics?.["3"]})`,
+        }}
+      >
         <div className={styles.details_image}>
           <div className={styles.details_image_content} data-aos="zoom-in">
             {i18n.language === "en" ? (

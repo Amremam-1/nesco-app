@@ -36,10 +36,8 @@ import GiftsPage from "./Pages/Gifts/GiftsPage"
 import GiftPage from "./Pages/GiftPage/GiftPage"
 import InvoicePage from "./Pages/Invoice/InvoicePage"
 import PoliticalPage from "./Pages/Political/PoliticalPage"
-// import GoogleCallback from "./Pages/GoogleCallback/GoogleCallback"
-import OAuth from "./Components/Auth/OAuth/OAuth"
-import GoogleCallback from "./Pages/GoogleCallback/GoogleCallback"
-// import GoogleCallback from "./Components/Auth/Google/GoogleCallback"
+
+import GoogleCallback from "./Components/Auth/Google/GoogleCallback"
 
 // import Scrollbar from 'smooth-scrollbar';
 

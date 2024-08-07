@@ -20,6 +20,7 @@
       font-size: 110px;
       text-transform: uppercase;
       line-height: 70%;
+      color: $secondary;
       font-family: $bebasbeua-font;
     }
 
@@ -52,6 +53,7 @@
     }
     h2 {
       font-family: $bebasbeua-font;
+      color: $secondary;
       font-size: 30px;
       text-transform: uppercase;
     }
@@ -99,7 +101,7 @@
 }
 
 .special_section {
-  border: 2px solid #000;
+  border: 2px solid $secondary;
   // padding: 15px;
   margin-bottom: 20px;
   cursor: pointer;
@@ -112,7 +114,7 @@
   // text-align: left;
   padding: 10px;
   color: #fff;
-  background: #000;
+  background: $secondary;
 }
 
 .our_shop {

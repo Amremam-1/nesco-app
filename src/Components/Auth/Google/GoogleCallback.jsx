@@ -10,66 +10,57 @@ const GoogleCallback = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    console.log("Location search:", location.search)
-    fetch(`/api/auth/callback${location.search}`, {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then(async (response) => {
-        console.log("Response status:", response.status)
+    const authenticateUser = async () => {
+      try {
+        const response = await fetch(`/api/auth/callback${location.search}`, {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        })
+
         const text = await response.text()
-        console.log("Response text:", text)
-        return response.ok ? JSON.parse(text) : Promise.reject(text)
-      })
-      .then((data) => {
-        console.log("Callback response data:", data)
+        if (!response.ok) throw new Error(text)
+
+        const data = JSON.parse(text)
         if (data.access_token) {
           setLoading(false)
           setData(data)
-          console.log("Access token set:", data.access_token)
           navigate("/")
         } else {
           throw new Error("Access token missing in response")
         }
-      })
-      .catch((error) => {
-        // console.error("Error in callback:", error)
-        console.log(error)
+      } catch (error) {
         setLoading(false)
         setError("Failed to authenticate with Google.")
-      })
+      }
+    }
+
+    authenticateUser()
   }, [location.search, navigate])
 
-  function fetchUserData() {
+  const fetchUserData = async () => {
     if (!data.access_token) {
       setError("Access token is missing.")
       return
     }
 
-    fetch(`/api/user`, {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: "Bearer " + data.access_token,
-      },
-    })
-      .then((response) => {
-        console.log("Response from fetchUserData:", response)
-        if (response.ok) {
-          return response.json()
-        }
-        throw new Error("Failed to fetch user data")
+    try {
+      const response = await fetch(`/api/user`, {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: "Bearer " + data.access_token,
+        },
       })
-      .then((data) => {
-        console.log("User data fetched:", data)
-        setUser(data)
-      })
-      .catch((error) => {
-        console.error("Error in fetchUserData:", error)
-        setError("Failed to fetch user data.")
-      })
+
+      if (!response.ok) throw new Error("Failed to fetch user data")
+
+      const data = await response.json()
+      setUser(data)
+    } catch (error) {
+      setError("Failed to fetch user data.")
+    }
   }
 
   if (loading) {

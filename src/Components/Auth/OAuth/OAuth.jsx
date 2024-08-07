@@ -63,7 +63,7 @@ const OAuth = () => {
   const [error, setError] = useState("")
 
   useEffect(() => {
-    fetch("/dashboard/api/auth", {
+    fetch("/api/auth", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

@@ -4,8 +4,8 @@
 .header,
 .customHeader,
 .fixedHeader {
-  border: 1px solid #54595f;
-  padding: 8px 20px;
+  // border: 1px solid #54595f;
+  padding: 10px 20px;
   position: relative;
   width: 100%;
   background-color: transparent;
@@ -22,7 +22,7 @@
     gap: 5px;
 
     .navLinks {
-      border: 1px solid #54595f;
+      // border: 1px solid #54595f;
       padding: 0px 10px;
       flex: 6;
       // flex: 1 0 45%;
@@ -67,7 +67,7 @@
       }
     }
     .logoWrapper {
-      border: 1px solid #54595f;
+      // border: 1px solid #54595f;
       padding: 0px 10px;
       flex: 6;
       // flex: 0 0 45%;

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react"
-import { useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 
-function GoogleCallback() {
+const GoogleCallback = () => {
   const [loading, setLoading] = useState(true)
   const [data, setData] = useState({})
   const [user, setUser] = useState(null)
   const [error, setError] = useState("")
   const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetch(`/api/auth/callback${location.search}`, {
@@ -25,6 +26,7 @@ function GoogleCallback() {
         if (data.access_token) {
           setLoading(false)
           setData(data)
+          navigate("/")
         } else {
           throw new Error("Access token missing in response")
         }
@@ -34,7 +36,7 @@ function GoogleCallback() {
         setLoading(false)
         setError("Failed to authenticate with Google.")
       })
-  }, [location.search])
+  }, [location.search, navigate])
 
   function fetchUserData() {
     if (!data.access_token) {

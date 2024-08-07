@@ -27,7 +27,7 @@ const About = () => {
           className={`scrollSection lazyload ${styles.imageOne}`}
           style={
             {
-              // backgroundImage: `url(${homePageData?.path}${homePageData?.pics?.["1"]})`,
+              backgroundImage: `url(${homePageData?.path}${homePageData?.pics?.["1"]})`,
             }
           }
         >

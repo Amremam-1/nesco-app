@@ -836,5 +836,10 @@
   "Political_1": "The original amount stated on the purchase invoice (order summary) will be refunded without shipping fees or international customs and tax charges.",
   "Political_2": "In other cases of exchange or return (other than what has been mentioned), the customer bears the shipping cost only.",
   "Political_3": "Returns must be made according to the conditions mentioned within two days of the customer's receipt of the shipment, considering the specified period for the return and exchange policy.",
-  "Political_4": "If the customer receives the shipment from the shipping company and the shipment is returned to us, a new shipping fee will be charged if the customer wishes to reship it."
+  "Political_4": "If the customer receives the shipment from the shipping company and the shipment is returned to us, a new shipping fee will be charged if the customer wishes to reship it.",
+
+  "corporate_title":"Complaints and Reports Submission Service",
+  "corporate_subtitle":"We are here to support you in submitting complaints about Nestro coffee and to review them seriously to ensure quality. Contact us for any inquiries or issues",
+  "corporate_button":"File a Complaint"
+
 }

@@ -69,7 +69,7 @@ const router = createBrowserRouter([
         element: <LoginPage />,
       },
 
-      { path: "/auth/callback", element: <GoogleCallback /> },
+      // { path: "/auth/callback", element: <GoogleCallback /> },
       {
         path: "/corporate-login",
         element: <CorporateLogin />,

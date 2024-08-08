@@ -113,7 +113,13 @@ const OAuth = () => {
   const handleGoogleLogin = async () => {
     try {
       const response = await axios.get("/auth/google")
-      window.location.href = response.data.url // Redirect to Google login
+      console.log(response.data)
+
+      if (response.data.url) {
+        window.location.href = response.data.url
+      } else {
+        console.error("No URL found in response")
+      }
     } catch (error) {
       console.error("Error during Google login:", error)
     }
@@ -122,7 +128,7 @@ const OAuth = () => {
   // Check if user is already logged in (e.g., using a token)
   const checkLoggedIn = async () => {
     try {
-      const response = await axios.get("/api/auth/check") // Replace with your route
+      const response = await axios.get("/api/auth/check") 
       if (response.data.isLoggedIn) {
         setIsLoggedIn(true)
       }
